@@ -11,14 +11,17 @@ using System.Windows.Shapes;
 
 namespace ege_math_trainer
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ButtonCanselMain(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

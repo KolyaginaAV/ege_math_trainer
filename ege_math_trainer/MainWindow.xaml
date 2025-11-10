@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ege_math_trainer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="MainWindow" Height="600" Width="500">
+    <StackPanel>
+        <TextBlock Text="Добро пожаловать!" FontSize="30" HorizontalAlignment="Center"/>
+        <ListBox Margin="5" Name="ListBoxTasks" 
+         FontSize="14" 
+         Height="400" 
+         SelectionChanged="ListBoxStudents_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="LightPink" Background="Pink" 
+                        BorderThickness="3" CornerRadius="20" 
+                        Margin="5" Padding="10">
+                        <Grid Width="350">
+                            <StackPanel>
+                                <TextBlock Text="{Binding}"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+            <Button Content="Выйти из аккаунта" FontSize="20" Click="ButtonCanselMain" Height="40" Width="200" Margin="5"/>
+        </StackPanel>
+    </StackPanel>
 </Window>
