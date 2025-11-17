@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ege_math_trainer.Windows"
         mc:Ignorable="d"
-        Title="RegistrationWindow" Height="600" Width="550">
+        Title="RegistrationWindow" Height="600" Width="570">
     <StackPanel Orientation="Vertical">
         <TextBlock Text="Регистрация" FontSize="30" HorizontalAlignment="Center" Margin="5"/>
         <StackPanel Orientation="Horizontal" Margin="5">
@@ -39,8 +39,8 @@
         <StackPanel Orientation="Horizontal" Margin="5">
             <Label Content="Роль" FontSize="25"/>
             <StackPanel Margin="10 0 0 0">
-                <RadioButton Content="Учитель" FontSize="20"/>
-                <RadioButton Content="Ученик" FontSize="20"/>
+                <RadioButton GroupName="Role" Content="Учитель" FontSize="20"/>
+                <RadioButton GroupName="Role" IsChecked="True" Content="Ученик" FontSize="20"/>
             </StackPanel>
         </StackPanel>
         <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Center">
