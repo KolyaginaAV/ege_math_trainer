@@ -8,5 +8,10 @@ namespace ege_math_trainer.Windows
         {
             InitializeComponent();
         }
+
+        private void ButtonDecisionCansel(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
