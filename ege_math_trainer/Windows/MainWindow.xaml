@@ -7,11 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="500">
     <StackPanel>
-        <TextBlock Text="Добро пожаловать!" FontSize="30" HorizontalAlignment="Center"/>
+        <TextBlock FontSize="30" HorizontalAlignment="Center">
+            <Run Text="Добро пожаловать,"/>
+            <Run Name="TextUserName"/>
+            <Run Text="!"/>
+        </TextBlock>
+        <TextBlock FontSize="14" Foreground="Gray" Text="Выберите задание, над которым хотите позаниматься" Margin="5 10 0 10"/>
         <ListBox Margin="5" Name="ListBoxTasks" 
          FontSize="14" 
-         Height="400" 
-         SelectionChanged="ListBoxStudents_SelectionChanged">
+         Height="400">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="LightPink" Background="Pink" 
@@ -19,7 +23,7 @@
                         Margin="5" Padding="10">
                         <Grid Width="350">
                             <StackPanel>
-                                <TextBlock Text="{Binding}"/>
+                                <TextBlock Text=""/>
                             </StackPanel>
                         </Grid>
                     </Border>

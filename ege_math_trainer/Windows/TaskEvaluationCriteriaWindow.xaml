@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ege_math_trainer.Windows"
         mc:Ignorable="d"
-        Title="TaskEvaluationCriteriaWindow" Height="600" Width="500">
-    <Grid>
-        
-    </Grid>
+        Title="TaskEvaluationCriteriaWindow" Height="400" Width="500">
+    <StackPanel>
+        <TextBlock Text="Критерии к заданию 13" FontSize="30" HorizontalAlignment="Center" Margin="5"/>
+        <TextBlock Text="jfrueijznrhgnyjhunrfhdxnuhufgh" Height="150" Margin="8" FontSize="15"/>
+        <Image/>
+        <StackPanel  Margin="8">
+            <TextBlock Text="Критерии по этому примеру задания:" FontSize="15"/>
+            <TextBlock Text="fkdrjuhngb" FontSize="15"/>
+        </StackPanel>
+        <Button Content="Вернуться к заданию" FontSize="18" Click="ButtonDecisionCansel" Height="40" Width="200" Margin="0 15 0 0"/>
+    </StackPanel>
 </Window>

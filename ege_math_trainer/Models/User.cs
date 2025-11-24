@@ -14,5 +14,6 @@
         /// По умолчанию ученик
         /// </summary>
         public string Role { get; set; } = "Ученик";
+
     }
 }

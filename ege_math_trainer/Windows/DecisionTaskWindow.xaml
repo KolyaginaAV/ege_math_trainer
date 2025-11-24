@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ege_math_trainer.Windows"
         mc:Ignorable="d"
-        Title="DecisionTaskWindow" Height="600" Width="500">
-    <Grid>
-        
-    </Grid>
+        Title="DecisionTaskWindow" Height="420" Width="500">
+    <StackPanel>
+        <TextBlock Text="Задание 13: Уравнения" FontSize="30" HorizontalAlignment="Center" Margin="5"/>
+        <TextBlock Text="Решение" FontSize="30" HorizontalAlignment="Center"/>
+        <StackPanel Margin="5">
+            <TextBlock Text="Условие" FontSize="22"/>
+            <TextBlock Name="TextBlockDecisionCondition" Height="40" Text="fcdizjknfkinf" FontSize="18" Margin="0 3 0 0"/>
+        </StackPanel>
+        <StackPanel Margin="5">
+            <TextBlock Text="Решение" FontSize="22"/>
+            <TextBlock Name="TextBlockDecision" Height="80" Text="fcdizjknfkinf" FontSize="18" Margin="0 3 0 0"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Правильный ответ: " FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock Name="TextBlockDecisionRightAnswer" Text="jndexjk" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <Button Content="Вернуться к заданию" FontSize="18" Click="ButtonDecisionCansel" Height="40" Width="200" Margin="0 15 0 0"/>
+    </StackPanel>
 </Window>

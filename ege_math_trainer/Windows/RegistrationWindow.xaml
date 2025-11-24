@@ -5,40 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ege_math_trainer.Windows"
         mc:Ignorable="d"
-        Title="Окно регистрации" Height="600" Width="570">
+        Title="Окно регистрации" Height="810" Width="500">
     <StackPanel Orientation="Vertical">
         <TextBlock Text="Регистрация" FontSize="30" HorizontalAlignment="Center" Margin="5"/>
-        <StackPanel Orientation="Horizontal" Margin="5">
-            <Label Content="Логин" FontSize="25"/>
-            <TextBox Name="BoxRegLogin" Width="450"/>
+        <StackPanel Margin="5">
+            <Label Content="Логин" FontSize="23"/>
+            <TextBox Name="BoxRegLogin" FontSize="18" Width="490" Height="35" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="5">
+            <Label Content="Пароль" FontSize="23"/>
+            <TextBox Name="BoxRegPassword" FontSize="18" Width="490" Height="35" HorizontalAlignment="Left" />
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="5">
+            <Label Content="Фамилия" FontSize="23"/>
+            <TextBox Name="BoxRegSurname" FontSize="18" Width="490" Height="35" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="5">
+            <Label Content="Имя" FontSize="23"/>
+            <TextBox Name="BoxRegName" FontSize="18" Height="35" Width="490" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="5">
+            <Label Content="Отчество" FontSize="23"/>
+            <TextBox Name="BoxRegPatronymic" FontSize="18" Width="490" Height="35" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="5">
+            <Label Content="Номер телефона" FontSize="23"/>
+            <TextBox Name="BoxRegPhone" FontSize="18" Height="35" Width="490" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="5">
+            <Label Content="Почта" FontSize="23"/>
+            <TextBox Name="BoxRegEmail" FontSize="18" Width="490" Height="35" HorizontalAlignment="Left"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="5">
-            <Label Content="Пароль" FontSize="25"/>
-            <TextBox Name="BoxRegPassword" Width="434"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="5">
-            <Label Content="Фамилия" FontSize="25"/>
-            <TextBox Name="BoxRegSurname" Width="417"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="5">
-            <Label Content="Имя" FontSize="25"/>
-            <TextBox Name="BoxRegName" Width="471"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="5">
-            <Label Content="Отчество" FontSize="25"/>
-            <TextBox Name="BoxRegPatronymic" Width="415"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="5">
-            <Label Content="Номер телефона" FontSize="25"/>
-            <TextBox Name="BoxRegPhone" Width="329"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="5">
-            <Label Content="Почта" FontSize="25"/>
-            <TextBox Name="BoxRegEmail" Width="453"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="5">
-            <Label Content="Роль" FontSize="25"/>
-            <StackPanel Margin="10 0 0 0">
+            <Label Content="Роль" FontSize="23"/>
+            <StackPanel Margin="15 0 0 0">
                 <RadioButton GroupName="Role" Content="Учитель" FontSize="20"/>
                 <RadioButton GroupName="Role" IsChecked="True" Content="Ученик" FontSize="20"/>
             </StackPanel>

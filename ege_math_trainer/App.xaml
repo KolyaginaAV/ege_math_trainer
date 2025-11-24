@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:ege_math_trainer"
              StartupUri="./Windows/AuthorizationWindow.xaml">
     <Application.Resources>
-         
+        
+        
+        
+        
+        
     </Application.Resources>
 </Application>

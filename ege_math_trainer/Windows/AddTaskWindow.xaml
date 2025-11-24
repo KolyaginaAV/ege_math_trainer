@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ege_math_trainer.Windows"
         mc:Ignorable="d"
-        Title="AddTaskWindow" Height="500" Width="600">
-    <Grid>
-        
-    </Grid>
+        Title="AddTaskWindow" Height="620" Width="450">
+    <StackPanel>
+        <TextBlock Text="Добавление задания (1)" FontSize="30" HorizontalAlignment="Center"/>
+        <StackPanel Margin="5">
+            <TextBlock Text="Условие" FontSize="22"/>
+            <TextBox Name="BoxAddTaskCondition" FontSize="18" Margin="0 3 0 0" Height="35"/>
+        </StackPanel>
+        <StackPanel Margin="5" >
+            <TextBlock Text="Картинка к условию" FontSize="22"/>
+            <TextBox Name="BoxAddTaskImageConditionPath" FontSize="18" Margin="0 3 0 0" Height="30"/>
+        </StackPanel>
+        <StackPanel Margin="5" >
+            <TextBlock Text="Решение" FontSize="22"/>
+            <TextBox Name="BoxAddTaskDecision" FontSize="18" Margin="0 3 0 0" Height="60"/>
+        </StackPanel>
+        <StackPanel Margin="5" >
+            <TextBlock Text="Картинка к решению" FontSize="22"/>
+            <TextBox Name="BoxAddTaskImageDecisionPath" FontSize="18" Margin="0 3 0 0" Height="30"/>
+        </StackPanel>
+        <StackPanel Margin="5" >
+            <TextBlock Text="Правильный ответ" FontSize="22"/>
+            <TextBox Name="BoxAddTaskRightAnswer" FontSize="18" Margin="0 3 0 0" Height="30"/>
+        </StackPanel>
+        <StackPanel Margin="5" >
+            <TextBlock Text="Критерии" FontSize="22"/>
+            <TextBox Name="BoxAddTaskIndEvaluationCriteria" FontSize="18" Margin="0 3 0 0" Height="50"/>
+        </StackPanel>
+        <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Сохранить" FontSize="25" Click="ButtonAddTaskSave" Width="150" Height="40" Margin="5"/>
+            <Button Content="Отмена" FontSize="25" Click="ButtonAddTaskCansel" Width="150" Margin="5"/>
+        </StackPanel>
+    </StackPanel>
 </Window>
