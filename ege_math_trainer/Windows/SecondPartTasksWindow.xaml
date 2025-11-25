@@ -17,13 +17,13 @@
             <TextBox Name="BoxTaskNote" FontSize="18" Height="60" Width="490" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="7">
-            <Button Content="Посмотреть решение" Foreground="Purple" FontSize="18" Width="170" Height="40"/>
-            <Button Content="Проверить себя по критериям" Foreground="Purple" FontSize="18"  Width="200" Height="40" Margin="5 0 0 0"/>
+            <Button Content="Посмотреть решение" Click="ButtonSecondPartTasksDecision" Foreground="Purple" FontSize="18" Width="200" Height="40"/>
+            <Button Content="Проверить себя по критериям" Click="ButtonSecondPartTasksCriteria" Foreground="Purple" FontSize="18"  Width="280" Height="40" Margin="5 0 0 0"/>
         </StackPanel>
         <Button Content="К следующему заданию" Foreground="Green" FontSize="18"  Width="220" Height="40"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="7">
-            <Button Content="Выход" FontSize="18" Width="100" Height="40"/>
-            <Button Content="Вернуться к выбору задания" FontSize="18"  Width="255" Height="40" Margin="5 0 0 0"/>
+            <Button Content="Выход" Click="ButtonSecondPartTasksCansel" FontSize="18" Width="100" Height="40"/>
+            <Button Content="Вернуться к выбору задания" Click="ButtonSecondPartTasksCanselToMain" FontSize="18"  Width="255" Height="40" Margin="5 0 0 0"/>
         </StackPanel>
     </StackPanel>
 </Window>

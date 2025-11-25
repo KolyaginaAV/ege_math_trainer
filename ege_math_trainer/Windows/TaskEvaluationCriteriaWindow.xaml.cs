@@ -11,7 +11,7 @@ namespace ege_math_trainer.Windows
 
         private void ButtonDecisionCansel(object sender, RoutedEventArgs e)
         {
-
+            this.DialogResult = true;
         }
     }
 }
