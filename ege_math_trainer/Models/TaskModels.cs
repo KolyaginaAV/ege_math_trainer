@@ -6,8 +6,8 @@
         public int Number { get; set; }
         public string Name { get; set; }
         public string Condition { get; set; } //условие
-        public string? ImageConditionPath { get; set; }
+        public string? ConditionImage { get; set; }
         public string Decision { get; set; } //решение
-        public string? ImageDecisionPath { get; set; }
+        public string? DecisionImagePath { get; set; }
     }
 }

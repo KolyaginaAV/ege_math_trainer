@@ -10,10 +10,6 @@
         public string Patronymic { get; set; }
         public string? Phone { get; set; }
         public string? Email { get; set; }
-        /// <summary>
-        /// По умолчанию ученик
-        /// </summary>
-        public string Role { get; set; } = "Ученик";
-
+        public Role Role { get; set; }
     }
 }
