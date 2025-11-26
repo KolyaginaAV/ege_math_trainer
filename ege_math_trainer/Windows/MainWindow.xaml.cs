@@ -10,6 +10,7 @@ namespace ege_math_trainer
         public MainWindow(User user)
         {
             InitializeComponent();
+
             TextUserName.Text = user.Name;
         }
         private void ButtonCanselMain(object sender, RoutedEventArgs e)
