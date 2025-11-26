@@ -11,5 +11,9 @@
         public string? DecisionImagePath { get; set; }
         public string RightAnswer { get; set; }
         public List<User> Users { get; set; } = new();
+        public override string ToString()
+        {
+            return $"{Name})";
+        }
     }
 }
