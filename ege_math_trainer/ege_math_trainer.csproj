@@ -8,4 +8,14 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ImagesCriteria\" />
+    <Folder Include="ImagesCondition\" />
+    <Folder Include="ImagesDecision\" />
+  </ItemGroup>
+
 </Project>
