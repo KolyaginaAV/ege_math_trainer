@@ -7,10 +7,11 @@
         mc:Ignorable="d"
         Title="FirstPartTasksWindow" Height="350" Width="500">
     <StackPanel>
-        <TextBlock Text="Задание 1: Планиметрия" FontSize="30" HorizontalAlignment="Center"/>
+        <TextBlock Name="FirstPartTaskTitle" FontSize="30" HorizontalAlignment="Center"/>
         <StackPanel Margin="5">
             <TextBlock Text="Условие" FontSize="22"/>
-            <TextBlock Name="TextBlockDecisionCondition" Height="40" Text="fcdizjknfkinf" FontSize="18" Margin="0 3 0 0"/>
+            <TextBlock Name="TextBlockConditionFirstPartTask" TextWrapping = "Wrap" FontSize="18" Margin="0 3 0 0"/>
+            <Image Name="ImageConditionFirstPartTask"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Ответ: " FontSize="22"/>

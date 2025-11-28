@@ -9,11 +9,14 @@ namespace ege_math_trainer
     public partial class MainWindow : Window
     {
         private AppContext _context;
+        public User currentUser;
         public MainWindow(User user)
         {
             InitializeComponent();
 
             _context = new AppContext(); //создаем
+
+            currentUser = user;
 
             ListBoxTasks.ItemsSource = _context.Tasks.ToList();
 
@@ -41,13 +44,13 @@ namespace ege_math_trainer
             {
                 if (taskId > 0 && taskId < 13)
                 {
-                    FirstPartTasksWindow firstPartTasksWindow = new FirstPartTasksWindow(taskId);
+                    FirstPartTasksWindow firstPartTasksWindow = new FirstPartTasksWindow(taskId, currentUser);
                     firstPartTasksWindow.Show();
                     this.Close();
                 }
                 else if (taskId > 12 && taskId < 20)
                 {
-                    SecondPartTasksWindow secondPartTasksWindow = new SecondPartTasksWindow(taskId);
+                    SecondPartTasksWindow secondPartTasksWindow = new SecondPartTasksWindow(taskId, currentUser);
                     secondPartTasksWindow.Show();
                     this.Close();
                 }

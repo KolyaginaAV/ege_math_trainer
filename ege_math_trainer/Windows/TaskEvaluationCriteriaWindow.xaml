@@ -8,11 +8,11 @@
         Title="TaskEvaluationCriteriaWindow" Height="400" Width="500">
     <StackPanel>
         <TextBlock Text="Критерии к заданию 13" FontSize="30" HorizontalAlignment="Center" Margin="5"/>
-        <TextBlock Text="jfrueijznrhgnyjhunrfhdxnuhufgh" Height="150" Margin="8" FontSize="15"/>
-        <Image/>
+        <TextBlock Name="TextBlockCriteria" TextWrapping = "Wrap" Height="150" Margin="8" FontSize="15"/>
+        <Image Name="ImageCriteria"/>
         <StackPanel  Margin="8">
-            <TextBlock Text="Критерии по этому примеру задания:" FontSize="15"/>
-            <TextBlock Text="fkdrjuhngb" FontSize="15"/>
+            <TextBlock Text="Критерии по этому примеру задания:" FontSize="16"/>
+            <TextBlock Name="TextBlockIndCriteria" TextWrapping = "Wrap" FontSize="15"/>
         </StackPanel>
         <Button Content="Вернуться к заданию" FontSize="18" Click="ButtonDecisionCansel" Height="40" Width="200" Margin="0 15 0 0"/>
     </StackPanel>
