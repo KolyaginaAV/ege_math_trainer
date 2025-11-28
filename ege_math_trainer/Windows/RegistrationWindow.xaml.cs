@@ -5,9 +5,12 @@ namespace ege_math_trainer.Windows
 {
     public partial class RegistrationWindow : Window
     {
+        private AppContext _context;
         public RegistrationWindow()
         {
             InitializeComponent();
+
+            _context = new AppContext(); //создаем
         }
 
         private void ButtonRegCancel(object sender, RoutedEventArgs e)
@@ -22,8 +25,31 @@ namespace ege_math_trainer.Windows
                !string.IsNullOrEmpty(BoxRegPatronymic.Text) && !string.IsNullOrEmpty(BoxRegPhone.Text) &&
                !string.IsNullOrEmpty(BoxRegEmail.Text))
             {
-                //
-                DialogResult = true;
+                User? regUser = _context.Users.FirstOrDefault(q => q.Login == BoxRegLogin.Text);
+                if (regUser == null)
+                {
+                    User newUser = new User
+                    {
+                        Login = BoxRegLogin.Text,
+                        Password = BoxRegPassword.Text,
+                        Surname = BoxRegSurname.Text,
+                        Name = BoxRegName.Text,
+                        Patronymic = BoxRegPatronymic.Text,
+                        Phone = BoxRegPhone.Text,
+                        Email = BoxRegEmail.Text,
+                        RoleId = 2 // По умолчанию студент
+                    };
+
+                    _context.Users.Add(newUser);
+                    _context.SaveChanges();
+
+                    DialogResult = true;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Пользователь с таким логином уже зарегистрирован./Введите другой логин или отмените регистрацию и попробуйте войти!");
+                }
             }
             else
             {

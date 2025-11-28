@@ -4,7 +4,7 @@ namespace ege_math_trainer.Windows
 {
     public partial class FirstPartTasksWindow : Window
     {
-        public FirstPartTasksWindow()
+        public FirstPartTasksWindow(int taskId)
         {
             InitializeComponent();
         }

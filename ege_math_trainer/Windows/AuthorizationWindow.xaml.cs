@@ -1,21 +1,24 @@
 ﻿using System.Windows;
 using ege_math_trainer.Models;
-using ege_math_trainer.Windows;
 
 namespace ege_math_trainer.Windows
 {
     public partial class AuthorizationWindow : Window
     {
+        private AppContext _context;
+
         public AuthorizationWindow()
         {
             InitializeComponent();
+
+            _context = new AppContext();
         }
 
         private void ButtonAuth(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(BoxLogin.Text) && !string.IsNullOrWhiteSpace(BoxPassword.Text))
             {
-                User? autUser = AppContext.Users.FirstOrDefault(q => q.Login == BoxLogin.Text && q.Password == BoxPassword.Text);
+                User? autUser = _context.Users.FirstOrDefault(q => q.Login == BoxLogin.Text && q.Password == BoxPassword.Text);
                 if (autUser != null) 
                 {
                     MainWindow mainWindow = new MainWindow(autUser);
@@ -36,10 +39,9 @@ namespace ege_math_trainer.Windows
         private void ButtonAuthReg(object sender, RoutedEventArgs e)
         {
             RegistrationWindow registrationWindow = new RegistrationWindow();
-            //registrationWindow.ShowDialog();
             if (registrationWindow.ShowDialog() == true)
             {
-               MessageBox.Show("Вы успешно зарегистрированы!");
+                MessageBox.Show("Вы зарегистрированы, войдите в аккаунт и приступайте к заданиям!", "Регистрация");
             }
         }
     }
