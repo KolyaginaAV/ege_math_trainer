@@ -7,7 +7,7 @@
         public string? ConditionImage { get; set; }
         public string? Decision { get; set; } //решение
         public string? DecisionImagePath { get; set; }
-        public string RightAnswer { get; set; }
+        public string? RightAnswer { get; set; }
         public string IndEvaluationCriteria { get; set; } //индивидуальные критерии для каждого задания
         public Criteria Criteria { get; set; }
         public int CriteriaId { get; set; }
