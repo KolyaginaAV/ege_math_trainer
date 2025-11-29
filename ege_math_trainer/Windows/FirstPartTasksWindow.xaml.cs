@@ -47,9 +47,17 @@ namespace ege_math_trainer.Windows
 
         private void ButtonFirstPartTasksCanselToMain(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow(currentUser);
-            mainWindow.Show();
-            this.Close();
+            MessageBoxResult result = MessageBox.Show(
+                "Вы хотите выйти и вернуться к выбору заданию?",
+                "Предупреждение",
+                MessageBoxButton.YesNo);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                MainWindow mainWindow = new MainWindow(currentUser);
+                mainWindow.Show();
+                this.Close();
+            }
         }
 
         private void ButtonFirstPartTasksCansel(object sender, RoutedEventArgs e)

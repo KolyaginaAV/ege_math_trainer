@@ -16,14 +16,15 @@ namespace ege_math_trainer.Windows
             if (currentTaskPart == 1)
             {
                 PartOneTask currentTask = _context.PartOneTasks.FirstOrDefault(q => q.Id == currentTaskId);
-                TextBlockDecisionCondition.Text = currentTask.Decision;
+                TextBlockDecisionCondition.Text = currentTask.Condition;
+                TextBlockDecision.Text = currentTask.Decision;
 
                 PanelDecisionAnswer.Visibility = Visibility.Visible;
                 TextBlockDecisionRightAnswer.Text = currentTask.RightAnswer;
 
                 if (!string.IsNullOrEmpty(currentTask.ConditionImage))
                 {
-                    ImageDecisionCondition.Source = new BitmapImage(new Uri(currentTask.ConditionImage, UriKind.Relative));
+                    //ImageDecisionCondition.Source = new BitmapImage(new Uri(currentTask.ConditionImage, UriKind.Relative));
                     //BitmapImage - класс WPF для работы с изображениями (принимает Uri и загружает изображение по этому пути)
                     //Uri - адрес; UriKind.Relative - относительный путь (не полный); UriKind.Absolute - абсолютный адрес
                 }
@@ -34,12 +35,12 @@ namespace ege_math_trainer.Windows
             //    TextBlockDecisionCondition.Text = currentTask.Decision;
             //    if (!string.IsNullOrEmpty(currentTask.ConditionImage))
             //    {
-            //        ImageDecisionCondition.Source = new BitmapImage(new Uri(currentTask.DecisionImagePath, UriKind.Relative));
+            //        //ImageDecisionCondition.Source = new BitmapImage(new Uri(currentTask.DecisionImagePath, UriKind.Relative));
             //        //BitmapImage - класс WPF для работы с изображениями (принимает Uri и загружает изображение по этому пути)
             //        //Uri - адрес; UriKind.Relative - относительный путь (не полный); UriKind.Absolute - абсолютный адрес
             //    }
             //}
-            
+
         }
 
         private void ButtonDecisionCansel(object sender, RoutedEventArgs e)

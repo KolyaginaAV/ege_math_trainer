@@ -11,12 +11,12 @@
         <TextBlock Text="Решение" FontSize="30" HorizontalAlignment="Center"/>
         <StackPanel Margin="5">
             <TextBlock Text="Условие" FontSize="22"/>
-            <TextBlock Name="TextBlockDecisionCondition" TextWrapping = "Wrap" Height="40" FontSize="18" Margin="0 3 0 0"/>
+            <TextBlock Name="TextBlockDecisionCondition" TextWrapping = "Wrap" FontSize="18" Margin="0 3 0 0"/>
             <Image Name="ImageDecisionCondition"/>
         </StackPanel>
         <StackPanel Margin="5">
             <TextBlock Text="Решение" FontSize="22"/>
-            <TextBlock Name="TextBlockDecision" TextWrapping = "Wrap" Height="80" FontSize="18" Margin="0 3 0 0"/>
+            <TextBlock Name="TextBlockDecision" TextWrapping = "Wrap" FontSize="18" Margin="0 3 0 0"/>
             <Image Name="ImageDecision"/>
         </StackPanel>
         <StackPanel Name="PanelDecisionAnswer" Visibility="Collapsed" Orientation="Horizontal">

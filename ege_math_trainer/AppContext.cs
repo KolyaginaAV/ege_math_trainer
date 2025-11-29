@@ -24,7 +24,6 @@ namespace ege_math_trainer
             Tasks.Load();
             PartOneTasks.Load();
             PartTwoTasks.Load();
-
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -57,9 +56,9 @@ namespace ege_math_trainer
             Task Task18 = new Task() { Id = 18, Name = "Задание 18: Задача с параметром" };
             Task Task19 = new Task() { Id = 19, Name = "Задание 19: Числа и их свойства" };
 
-            PartOneTask partOneTask1 = new PartOneTask() { Id = 1, Condition = "В треугольнике ABC AC  =  BC, AB  =  9,6, sinA=7/25. Найдите AC.",
-                ConditionImage = "ImagesCondition/partOneTask1condition.png", Decision = "Треугольник АВС равнобедренный, значит, высота СН делит основание АВ пополам. Тогда",
-                RightAnswer = "0.9", TaskId = Task1.Id};
+            PartOneTask partOneTask1 = new PartOneTask() { Id = 1, Condition = "В треугольнике ABC угол C равен 90°, АС  =  8, tgA=0,5. Найдите BC.",
+                ConditionImage = "ImagesCondition/partOneTask1condition.png", Decision = "  По определению тангенса: BC=AC*tgA=8*0,5=4",
+                RightAnswer = "4", TaskId = Task1.Id};
             PartOneTask partOneTask1_2 = new PartOneTask() { Id = 2, Condition = "В треугольнике ABC угол C равен 90°, AB=10, BC=√19. Найдите cosA.",
                 ConditionImage = "ImagesCondition/condition1.png", Decision = "Косинус это отношение прилежащего катета к гипотенузе. В данном случае cosA=AC/AB.\nНам неизвестно AC, находим его по обратной теореме Пифагора:\nAC=√AB²-BC²=√81=9.\nТеперь нам всё известно. Подставляем:\ncosA=9/10=0,9",
                 DecisionImagePath = "ImagesDecision/decision1.png", RightAnswer = "5", TaskId = Task1.Id};

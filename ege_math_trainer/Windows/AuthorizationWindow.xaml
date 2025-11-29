@@ -10,11 +10,11 @@
         <TextBlock Text="ЕГЭ по математике" FontSize="30" HorizontalAlignment="Center"/>
         <StackPanel Margin="5">
             <Label Content="Логин" FontSize="25"/>
-            <TextBox Name="BoxLogin" Width="300" Height="30"/>
+            <TextBox Name="BoxLogin" FontSize="18" Width="300" Height="30"/>
         </StackPanel>
         <StackPanel Margin="5">
             <Label Content="Пароль" FontSize="25"/>
-            <TextBox Name="BoxPassword" Width="300" Height="30"/>
+            <TextBox Name="BoxPassword" FontSize="18" Width="300" Height="30"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
             <Button Content="Войти" FontSize="20" Click="ButtonAuth" Height="40" Width="80" Margin="5"/>
