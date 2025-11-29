@@ -35,7 +35,7 @@ namespace ege_math_trainer.Windows
             {
                 MessageBoxResult result = MessageBox.Show("Вы уже решили все задания этого номера, хотите прорешать их снова?",
                     "Сообщение", MessageBoxButton.YesNo);
-                // добавить удаление юзера из задания этого типа 
+                // добавить удаление юзера из задания этого типа заданий
             }
         }
 
