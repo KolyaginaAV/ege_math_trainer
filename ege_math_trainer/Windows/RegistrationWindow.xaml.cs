@@ -28,6 +28,15 @@ namespace ege_math_trainer.Windows
                 User? regUser = _context.Users.FirstOrDefault(q => q.Login == BoxRegLogin.Text);
                 if (regUser == null)
                 {
+                    int roleId;
+                    if (RadioButtonTeacher.IsChecked == true)
+                    {
+                        roleId = 1; 
+                    }
+                    else
+                    {
+                        roleId = 2;
+                    }
                     User newUser = new User
                     {
                         Login = BoxRegLogin.Text,
@@ -37,14 +46,13 @@ namespace ege_math_trainer.Windows
                         Patronymic = BoxRegPatronymic.Text,
                         Phone = BoxRegPhone.Text,
                         Email = BoxRegEmail.Text,
-                        RoleId = 2 // По умолчанию студент
+                        RoleId = roleId 
                     };
 
                     _context.Users.Add(newUser);
                     _context.SaveChanges();
 
                     DialogResult = true;
-                    this.Close();
                 }
                 else
                 {

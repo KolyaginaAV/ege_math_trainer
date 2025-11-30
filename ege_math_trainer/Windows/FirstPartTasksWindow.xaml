@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ege_math_trainer.Windows"
         mc:Ignorable="d"
-        Title="FirstPartTasksWindow">
+        Title="FirstPartTasksWindow" SizeToContent ="Height" Width="700">
     <StackPanel>
-        <TextBlock Name="FirstPartTaskTitle" FontSize="30" HorizontalAlignment="Center"/>
+        <TextBlock Name="FirstPartTaskTitle" FontSize="30" TextWrapping = "Wrap" HorizontalAlignment="Center"/>
         <StackPanel Margin="5">
             <TextBlock Text="Условие" FontSize="22"/>
             <TextBlock Name="TextBlockConditionFirstPartTask" TextWrapping = "Wrap" FontSize="18" Margin="0 3 0 0"/>
@@ -21,7 +21,8 @@
             <Button Content="Проверить ответ" Foreground="Purple" FontSize="18" Width="170" Height="40"/>
             <Button Content="Посмотреть решение" Foreground="Purple" Click="ButtonFirstPartTasksDecision" FontSize="18"  Width="200" Height="40" Margin="5 0 0 0"/>
         </StackPanel>
-        <Button Content="К следующему заданию" Foreground="Green" FontSize="18"  Width="220" Height="40"/>
+        <Button Content="К следующему заданию" Foreground="Green" FontSize="18"  Width="220" 
+                Height="40" Click="ButtonFirstPartTasksNextTask"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="7">
             <Button Content="Выход" Click="ButtonFirstPartTasksCansel" FontSize="18" Width="100" Height="40"/>
             <Button Content="Вернуться к выбору задания" Click="ButtonFirstPartTasksCanselToMain" FontSize="18"  Width="255" Height="40" Margin="5 0 0 0"/>

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media.Imaging;
 using ege_math_trainer.Models;
 
@@ -16,6 +17,10 @@ namespace ege_math_trainer.Windows
             if (currentTaskPart == 1)
             {
                 PartOneTask currentTask = _context.PartOneTasks.FirstOrDefault(q => q.Id == currentTaskId);
+
+                int number = currentTask.TaskId;
+                NameTaskDecision.Text = _context.Tasks.FirstOrDefault(q => q.Id == number).ToString();
+
                 TextBlockDecisionCondition.Text = currentTask.Condition;
                 TextBlockDecision.Text = currentTask.Decision;
 
@@ -29,17 +34,22 @@ namespace ege_math_trainer.Windows
                     //Uri - адрес; UriKind.Relative - относительный путь (не полный); UriKind.Absolute - абсолютный адрес
                 }
             }
-            //else
-            //{
-            //    PartTwoTask currentTask = _context.PartTwoTasks.FirstOrDefault(q => q.Id == currentTaskId);
-            //    TextBlockDecisionCondition.Text = currentTask.Decision;
-            //    if (!string.IsNullOrEmpty(currentTask.ConditionImage))
-            //    {
+            else
+            {
+                PartTwoTask currentTask = _context.PartTwoTasks.FirstOrDefault(q => q.Id == currentTaskId);
+
+                int number = currentTask.TaskId;
+                NameTaskDecision.Text = _context.Tasks.FirstOrDefault(q => q.Id == number).ToString();
+
+                TextBlockDecisionCondition.Text = currentTask.Condition;
+                TextBlockDecision.Text = currentTask.Decision;
+                if (!string.IsNullOrEmpty(currentTask.ConditionImage))
+                {
             //        //ImageDecisionCondition.Source = new BitmapImage(new Uri(currentTask.DecisionImagePath, UriKind.Relative));
             //        //BitmapImage - класс WPF для работы с изображениями (принимает Uri и загружает изображение по этому пути)
             //        //Uri - адрес; UriKind.Relative - относительный путь (не полный); UriKind.Absolute - абсолютный адрес
-            //    }
-            //}
+               }
+            }
 
         }
 

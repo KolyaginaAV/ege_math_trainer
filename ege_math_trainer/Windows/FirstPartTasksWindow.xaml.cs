@@ -1,6 +1,8 @@
-﻿using System.Windows;
+﻿using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media.Imaging;
 using ege_math_trainer.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ege_math_trainer.Windows
 {
@@ -8,20 +10,23 @@ namespace ege_math_trainer.Windows
     {
         private AppContext _context;
         public User currentUser;
-        public int currentTaskId;
+        public int currentTaskFirstPartId;
         public int currentTaskPart = 1;
+        public int currenttaskId;
         public FirstPartTasksWindow(int taskId, User user)
         {
             InitializeComponent();
 
             _context = new AppContext();
             FirstPartTaskTitle.Text = _context.Tasks.FirstOrDefault(q => q.Id == taskId).ToString();
-            currentUser = user;
+
+            currentUser = _context.Users.FirstOrDefault(u => u.Id == user.Id); ;
+            currenttaskId = taskId;
 
             PartOneTask currentTask = _context.PartOneTasks.FirstOrDefault(q => q.TaskId == taskId && !q.Users.Any(u => u.Id == currentUser.Id));
             if (currentTask != null)
             {
-                currentTaskId = currentTask.Id;
+                currentTaskFirstPartId = currentTask.Id;
                 TextBlockConditionFirstPartTask.Text = currentTask.Condition;
                 if (!string.IsNullOrEmpty(currentTask.ConditionImage))
                 {
@@ -29,19 +34,33 @@ namespace ege_math_trainer.Windows
                     //BitmapImage - класс WPF для работы с изображениями (принимает Uri и загружает изображение по этому пути)
                     //Uri - адрес; UriKind.Relative - относительный путь (не полный); UriKind.Absolute - абсолютный адрес
                 }
-
+                currentTask.Users.Add(currentUser);
+                _context.SaveChanges();
             }
             else
             {
                 MessageBoxResult result = MessageBox.Show("Вы уже решили все задания этого номера, хотите прорешать их снова?",
                     "Сообщение", MessageBoxButton.YesNo);
-                // добавить удаление юзера из задания этого типа заданий
+                if (result == MessageBoxResult.Yes)
+                {
+                    List<PartOneTask> completedTasks = new();
+                    completedTasks.Add(_context.PartOneTasks.FirstOrDefault(q => q.TaskId == taskId));
+
+                    foreach (PartOneTask task in completedTasks)
+                    {
+                        task.Users.Remove(currentUser);
+                    }
+                    _context.SaveChanges();
+                    FirstPartTasksWindow newWindow = new FirstPartTasksWindow(taskId, currentUser);
+                    newWindow.Show();
+                    this.Close();
+                }
             }
         }
 
         private void ButtonFirstPartTasksDecision(object sender, RoutedEventArgs e)
         {
-            DecisionTaskWindow decisionTaskWindow = new DecisionTaskWindow(currentTaskId, currentTaskPart);
+            DecisionTaskWindow decisionTaskWindow = new DecisionTaskWindow(currentTaskFirstPartId, currentTaskPart);
             decisionTaskWindow.ShowDialog();
         }
 
@@ -73,6 +92,13 @@ namespace ege_math_trainer.Windows
                 authorizationWindow.Show();
                 this.Close();
             }
+        }
+
+        private void ButtonFirstPartTasksNextTask(object sender, RoutedEventArgs e)
+        {
+            FirstPartTasksWindow nextFirstPartTasksWindow = new FirstPartTasksWindow(currenttaskId, currentUser);
+            nextFirstPartTasksWindow.Show();
+            this.Close();
         }
     }
 }

@@ -14,7 +14,7 @@ namespace ege_math_trainer
 
         public AppContext()
         {
-            Database.EnsureDeleted(); //удаление БД
+            //Database.EnsureDeleted(); //удаление БД
             Database.EnsureCreated(); //создание бд
 
             //прогрузили в бд данные мб надо закомментить

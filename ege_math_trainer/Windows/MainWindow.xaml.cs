@@ -40,19 +40,35 @@ namespace ege_math_trainer
 
         private void ButtonMainTask(object sender, RoutedEventArgs e)
         {
-            if (sender is Button button && button.Tag is int taskId)
+            //if (sender is Button button && button.Tag is int taskId) //pattern matching - проверяет, что у sender тип Button и создаёт
+            //                                                         //button; проверяет, что button.Tag это int и создет taskId
+            //{
+            //    if (taskId > 0 && taskId < 13)
+            //    {
+            //        FirstPartTasksWindow firstPartTasksWindow = new FirstPartTasksWindow(taskId, currentUser);
+            //        firstPartTasksWindow.Show();
+            //        this.Close();
+            //    }
+            //    else if (taskId > 12 && taskId < 20)
+            //    {
+            //        SecondPartTasksWindow secondPartTasksWindow = new SecondPartTasksWindow(taskId, currentUser);
+            //        secondPartTasksWindow.Show();
+            //        this.Close();
+            //    }
+            //}
+        }
+
+        private void ButtonMainTaskDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (currentUser.RoleId == 1)
             {
-                if (taskId > 0 && taskId < 13)
+                if (sender is Button button && button.Tag is int taskId)
                 {
-                    FirstPartTasksWindow firstPartTasksWindow = new FirstPartTasksWindow(taskId, currentUser);
-                    firstPartTasksWindow.Show();
-                    this.Close();
-                }
-                else if (taskId > 12 && taskId < 20)
-                {
-                    SecondPartTasksWindow secondPartTasksWindow = new SecondPartTasksWindow(taskId, currentUser);
-                    secondPartTasksWindow.Show();
-                    this.Close();
+                    AddTaskWindow addTaskWindow = new AddTaskWindow(taskId);
+                    if (addTaskWindow.ShowDialog() == true)
+                    {
+                        MessageBox.Show("Задание добавлено!", "Добавление задания");
+                    }
                 }
             }
         }

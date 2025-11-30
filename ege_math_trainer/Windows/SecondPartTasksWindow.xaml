@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ege_math_trainer.Windows"
         mc:Ignorable="d"
-        Title="SecondPartTasksWindow" Height="400" Width="500">
+        Title="SecondPartTasksWindow" Width="700" SizeToContent ="Height" >
     <StackPanel>
-        <TextBlock Name="SecondPartTaskTitle" FontSize="30" HorizontalAlignment="Center"/>
+        <TextBlock Name="SecondPartTaskTitle" TextWrapping = "Wrap" FontSize="30" HorizontalAlignment="Center"/>
         <StackPanel Margin="5">
             <TextBlock Text="Условие" FontSize="22"/>
-            <TextBlock Name="TextBlockDecisionCondition" Height="40" FontSize="18" Margin="0 3 0 0"/>
+            <TextBlock Name="TextBlockConditionSecondPartTask" TextWrapping = "Wrap" FontSize="18" Margin="0 3 0 0"/>
         </StackPanel>
         <StackPanel Margin="5">
             <TextBlock Text="Для записей (решения)" FontSize="22"/>
