@@ -9,13 +9,144 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0" />
+    <None Remove="ImagesCondition\condition1.png" />
+    <None Remove="ImagesCondition\condition11.png" />
+    <None Remove="ImagesCondition\partOneTask11condition.jpg" />
+    <None Remove="ImagesCondition\partOneTask1condition.png" />
+    <None Remove="ImagesCondition\partOneTask3condition.jpg" />
+    <None Remove="ImagesCondition\partOneTask6condition.jpg" />
+    <None Remove="ImagesCondition\partOneTask8condition.jpg" />
+    <None Remove="ImagesCriteria\criteria13.png" />
+    <None Remove="ImagesCriteria\criteria14.png" />
+    <None Remove="ImagesCriteria\criteria15.png" />
+    <None Remove="ImagesCriteria\criteria16.png" />
+    <None Remove="ImagesCriteria\criteria17.png" />
+    <None Remove="ImagesCriteria\criteria18.png" />
+    <None Remove="ImagesCriteria\criteria19.png" />
+    <None Remove="ImagesDecision\decision1.png" />
+    <None Remove="ImagesDecision\decision13.png" />
+    <None Remove="ImagesDecision\decision13_2.png" />
+    <None Remove="ImagesDecision\decision14.png" />
+    <None Remove="ImagesDecision\decision14_1.png" />
+    <None Remove="ImagesDecision\decision15.png" />
+    <None Remove="ImagesDecision\decision15_1.png" />
+    <None Remove="ImagesDecision\decision16.png" />
+    <None Remove="ImagesDecision\decision17.png" />
+    <None Remove="ImagesDecision\decision17_1.png" />
+    <None Remove="ImagesDecision\decision18.png" />
+    <None Remove="ImagesDecision\decision18_1.png" />
+    <None Remove="ImagesDecision\decision3.png" />
+    <None Remove="ImagesDecision\partOneTask11decision.jpg" />
+    <None Remove="ImagesDecision\partOneTask12decision.jpg" />
+    <None Remove="ImagesDecision\partOneTask6decision.jpg" />
+    <None Remove="ImagesDecision\partOneTask7decision.jpg" />
+    <None Remove="ImagesDecision\partOneTask9decision.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ImagesCriteria\" />
-    <Folder Include="ImagesCondition\" />
-    <Folder Include="ImagesDecision\" />
+    <Content Include="ImagesCondition\condition1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesCondition\condition11.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesCondition\partOneTask11condition.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesCondition\partOneTask1condition.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesCondition\partOneTask3condition.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesCondition\partOneTask6condition.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesCondition\partOneTask8condition.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesCriteria\criteria13.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesCriteria\criteria14.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesCriteria\criteria15.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesCriteria\criteria16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesCriteria\criteria17.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesCriteria\criteria18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesCriteria\criteria19.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesDecision\decision1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesDecision\decision13.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesDecision\decision13_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ImagesDecision\decision14.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesDecision\decision14_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesDecision\decision15.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesDecision\decision15_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesDecision\decision16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesDecision\decision17.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesDecision\decision17_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesDecision\decision18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesDecision\decision18_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesDecision\decision3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesDecision\partOneTask11decision.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesDecision\partOneTask12decision.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesDecision\partOneTask6decision.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesDecision\partOneTask7decision.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagesDecision\partOneTask9decision.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0" />
   </ItemGroup>
 
 </Project>
