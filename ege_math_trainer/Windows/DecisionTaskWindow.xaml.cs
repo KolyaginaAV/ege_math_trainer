@@ -29,9 +29,13 @@ namespace ege_math_trainer.Windows
 
                 if (!string.IsNullOrEmpty(currentTask.ConditionImage))
                 {
-                    //ImageDecisionCondition.Source = new BitmapImage(new Uri(currentTask.ConditionImage, UriKind.Relative));
+                    ImageDecisionCondition.Source = new BitmapImage(new Uri(currentTask.ConditionImage, UriKind.Relative));
                     //BitmapImage - класс WPF для работы с изображениями (принимает Uri и загружает изображение по этому пути)
                     //Uri - адрес; UriKind.Relative - относительный путь (не полный); UriKind.Absolute - абсолютный адрес
+                }
+                if (!string.IsNullOrEmpty(currentTask.DecisionImagePath))
+                {
+                    ImageDecision.Source = new BitmapImage(new Uri(currentTask.ConditionImage, UriKind.Relative));
                 }
             }
             else
@@ -42,15 +46,23 @@ namespace ege_math_trainer.Windows
                 NameTaskDecision.Text = _context.Tasks.FirstOrDefault(q => q.Id == number).ToString();
 
                 TextBlockDecisionCondition.Text = currentTask.Condition;
-                TextBlockDecision.Text = currentTask.Decision;
                 if (!string.IsNullOrEmpty(currentTask.ConditionImage))
                 {
-            //        //ImageDecisionCondition.Source = new BitmapImage(new Uri(currentTask.DecisionImagePath, UriKind.Relative));
-            //        //BitmapImage - класс WPF для работы с изображениями (принимает Uri и загружает изображение по этому пути)
-            //        //Uri - адрес; UriKind.Relative - относительный путь (не полный); UriKind.Absolute - абсолютный адрес
-               }
+                    ImageDecisionCondition.Source = new BitmapImage(new Uri(currentTask.ConditionImage, UriKind.Relative));
+                    //BitmapImage - класс WPF для работы с изображениями (принимает Uri и загружает изображение по этому пути)
+                    //Uri - адрес; UriKind.Relative - относительный путь (не полный); UriKind.Absolute - абсолютный адрес
+                }
+                if (currentTask.Decision != null)
+                {
+                    TextBlockDecision.Text = currentTask.Decision;
+                }
+                if (currentTask.DecisionImagePath != null)
+                {
+                    ImageDecision.MaxHeight = 900;
+                    ImageDecision.MaxWidth = 800;
+                    ImageDecision.Source = new BitmapImage(new Uri(currentTask.DecisionImagePath, UriKind.Relative));
+                }
             }
-
         }
 
         private void ButtonDecisionCansel(object sender, RoutedEventArgs e)

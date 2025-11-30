@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Media.Imaging;
 using ege_math_trainer.Models;
 
 namespace ege_math_trainer.Windows
@@ -22,7 +23,7 @@ namespace ege_math_trainer.Windows
             TextBlockCriteria.Text = criteria.EvaluationCriteria;
 
             TextBlockIndCriteria.Text = currentTask.IndEvaluationCriteria;
-
+            ImageCriteria.Source = new BitmapImage(new Uri(criteria.ImageEvaluationCriteriaPath, UriKind.Relative));
         }
 
         private void ButtonDecisionCansel(object sender, RoutedEventArgs e)

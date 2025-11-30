@@ -5,19 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ege_math_trainer.Windows"
         mc:Ignorable="d"
-        Title="DecisionTaskWindow" Width="600" SizeToContent ="Height">
+        Title="DecisionTaskWindow" Width="950" SizeToContent ="Height">
     <StackPanel>
         <TextBlock Name="NameTaskDecision" FontSize="30" HorizontalAlignment="Center" Margin="5"/>
         <TextBlock Text="Решение" FontSize="30" HorizontalAlignment="Center"/>
         <StackPanel Margin="5">
             <TextBlock Text="Условие" FontSize="22"/>
             <TextBlock Name="TextBlockDecisionCondition" TextWrapping = "Wrap" FontSize="18" Margin="0 3 0 0"/>
-            <Image Name="ImageDecisionCondition"/>
+            <Image Name="ImageDecisionCondition" MaxHeight="200" MaxWidth="200"/>
         </StackPanel>
-        <StackPanel Margin="5">
+        <StackPanel Margin="10 0 10 0">
             <TextBlock Text="Решение" FontSize="22"/>
             <TextBlock Name="TextBlockDecision" TextWrapping = "Wrap" FontSize="18" Margin="0 3 0 0"/>
-            <Image Name="ImageDecision"/>
+            <Image Name="ImageDecision" MaxHeight="200" MaxWidth="200"/>
         </StackPanel>
         <StackPanel Name="PanelDecisionAnswer" Visibility="Collapsed" Orientation="Horizontal">
             <TextBlock Text="Правильный ответ: " FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Center"/>

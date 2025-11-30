@@ -11,14 +11,15 @@
         <StackPanel Margin="5">
             <TextBlock Text="Условие" FontSize="22"/>
             <TextBlock Name="TextBlockConditionFirstPartTask" TextWrapping = "Wrap" FontSize="18" Margin="0 3 0 0"/>
-            <Image Name="ImageConditionFirstPartTask"/>
+            <Image Name="ImageConditionFirstPartTask" MaxWidth="200" MaxHeight="200" Margin="5"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Ответ: " FontSize="22"/>
             <TextBox Name="BoxTaskAnswer" Width="80" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="7">
-            <Button Content="Проверить ответ" Foreground="Purple" FontSize="18" Width="170" Height="40"/>
+            <Button Content="Проверить ответ" Foreground="Purple" FontSize="18" 
+                    Click="ButtonFirstPartTasksAnswer" Width="170" Height="40"/>
             <Button Content="Посмотреть решение" Foreground="Purple" Click="ButtonFirstPartTasksDecision" FontSize="18"  Width="200" Height="40" Margin="5 0 0 0"/>
         </StackPanel>
         <Button Content="К следующему заданию" Foreground="Green" FontSize="18"  Width="220" 

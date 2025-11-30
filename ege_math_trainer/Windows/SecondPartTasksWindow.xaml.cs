@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Media.Imaging;
 using ege_math_trainer.Models;
 
 namespace ege_math_trainer.Windows
@@ -9,12 +10,16 @@ namespace ege_math_trainer.Windows
         public User currentUser;
         public int currentTaskId;
         public int currentTaskPart = 2;
+        public int currenttaskId;
         public SecondPartTasksWindow(int taskId, User user)
         {
             InitializeComponent();
 
             _context = new AppContext();
+
             currentUser = _context.Users.FirstOrDefault(u => u.Id == user.Id);
+
+            currenttaskId = taskId;
 
             SecondPartTaskTitle.Text = _context.Tasks.FirstOrDefault(q => q.Id == taskId).ToString();
 
@@ -23,7 +28,12 @@ namespace ege_math_trainer.Windows
             {
                 currentTaskId = currentTask.Id;
                 TextBlockConditionSecondPartTask.Text = currentTask.Condition;
-
+                if (!string.IsNullOrEmpty(currentTask.ConditionImage))
+                {
+                    ImageConditionSecondPartTask.Source = new BitmapImage(new Uri(currentTask.ConditionImage, UriKind.Relative));
+                    //BitmapImage - класс WPF для работы с изображениями (принимает Uri и загружает изображение по этому пути)
+                    //Uri - адрес; UriKind.Relative - относительный путь (не полный); UriKind.Absolute - абсолютный адрес
+                }
                 currentTask.Users.Add(currentUser);
                 _context.SaveChanges();
             }
@@ -89,6 +99,13 @@ namespace ege_math_trainer.Windows
         {
             TaskEvaluationCriteriaWindow taskEvaluationCriteriaWindow = new TaskEvaluationCriteriaWindow(currentTaskId, currentTaskPart);
             taskEvaluationCriteriaWindow.ShowDialog();
+        }
+
+        private void ButtonSecondPartTasksNextTask(object sender, RoutedEventArgs e)
+        {
+            FirstPartTasksWindow nextFirstPartTasksWindow = new FirstPartTasksWindow(currenttaskId, currentUser);
+            nextFirstPartTasksWindow.Show();
+            this.Close();
         }
     }
 }

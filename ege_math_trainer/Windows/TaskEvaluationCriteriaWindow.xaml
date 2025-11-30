@@ -9,9 +9,9 @@
     <StackPanel>
         <TextBlock Name="NameCriteriaTask" FontSize="30" HorizontalAlignment="Center" Margin="5"/>
         <TextBlock Name="TextBlockCriteria" TextWrapping = "Wrap" Margin="8" FontSize="15"/>
-        <Image Name="ImageCriteria"/>
-        <StackPanel  Margin="8">
-            <TextBlock Text="Критерии по этому примеру задания:" FontSize="16"/>
+        <Image Name="ImageCriteria" Margin="10 0 10 0"/>
+        <StackPanel  Margin="10 0 0 0">
+            <TextBlock Text="Критерии по этому примеру задания:" FontSize="17"/>
             <TextBlock Name="TextBlockIndCriteria" TextWrapping = "Wrap" FontSize="15"/>
         </StackPanel>
         <Button Content="Вернуться к заданию" FontSize="18" Click="ButtonDecisionCansel" 

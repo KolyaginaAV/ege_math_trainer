@@ -10,31 +10,31 @@
         <TextBlock Text="Регистрация" FontSize="30" HorizontalAlignment="Center" Margin="5" FontWeight="Bold" />
         <StackPanel Margin="10 5 10 5">
             <Label Content="Логин" FontSize="20" FontWeight="Bold"/>
-            <TextBox Name="BoxRegLogin" FontSize="18" Width="490" Height="35" HorizontalAlignment="Left"/>
+            <TextBox Name="BoxRegLogin" FontSize="18" Width="490" Height="35" VerticalContentAlignment ="Center"  HorizontalAlignment="Left"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="10 5 10 5">
             <Label Content="Пароль" FontSize="20" FontWeight="Bold"/>
-            <TextBox Name="BoxRegPassword" FontSize="18" Width="490" Height="35" HorizontalAlignment="Left" />
+            <TextBox Name="BoxRegPassword" FontSize="18" Width="490" Height="35" VerticalContentAlignment ="Center" HorizontalAlignment="Left" />
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="10 5 10 5">
             <Label Content="Фамилия" FontSize="20" FontWeight="Bold"/>
-            <TextBox Name="BoxRegSurname" FontSize="18" Width="490" Height="35" HorizontalAlignment="Left"/>
+            <TextBox Name="BoxRegSurname" FontSize="18" Width="490" Height="35" VerticalContentAlignment ="Center" HorizontalAlignment="Left"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="10 5 10 5">
             <Label Content="Имя" FontSize="20" FontWeight="Bold"/>
-            <TextBox Name="BoxRegName" FontSize="18" Height="35" Width="490" HorizontalAlignment="Left"/>
+            <TextBox Name="BoxRegName" FontSize="18" Height="35" Width="490" VerticalContentAlignment ="Center" HorizontalAlignment="Left"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="10 5 10 5">
             <Label Content="Отчество" FontSize="20" FontWeight="Bold"/>
-            <TextBox Name="BoxRegPatronymic" FontSize="18" Width="490" Height="35" HorizontalAlignment="Left"/>
+            <TextBox Name="BoxRegPatronymic" FontSize="18" Width="490" Height="35" VerticalContentAlignment ="Center" HorizontalAlignment="Left"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="10 5 10 5">
             <Label Content="Номер телефона" FontSize="20" FontWeight="Bold"/>
-            <TextBox Name="BoxRegPhone" FontSize="18" Height="35" Width="490" HorizontalAlignment="Left"/>
+            <TextBox Name="BoxRegPhone" FontSize="18" Height="35" Width="490" VerticalContentAlignment ="Center" HorizontalAlignment="Left"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="10 5 10 5">
             <Label Content="Почта" FontSize="20" FontWeight="Bold"/>
-            <TextBox Name="BoxRegEmail" FontSize="18" Width="490" Height="35" HorizontalAlignment="Left"/>
+            <TextBox Name="BoxRegEmail" FontSize="18" Width="490" Height="35" VerticalContentAlignment ="Center" HorizontalAlignment="Left"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="10 5 10 5">
             <Label Content="Роль" FontSize="20" FontWeight="Bold"/>

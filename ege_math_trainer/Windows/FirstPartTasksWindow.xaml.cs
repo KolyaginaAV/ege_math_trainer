@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using ege_math_trainer.Models;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,7 @@ namespace ege_math_trainer.Windows
         public int currentTaskFirstPartId;
         public int currentTaskPart = 1;
         public int currenttaskId;
+        public PartOneTask currentTask;
         public FirstPartTasksWindow(int taskId, User user)
         {
             InitializeComponent();
@@ -23,7 +25,7 @@ namespace ege_math_trainer.Windows
             currentUser = _context.Users.FirstOrDefault(u => u.Id == user.Id); ;
             currenttaskId = taskId;
 
-            PartOneTask currentTask = _context.PartOneTasks.FirstOrDefault(q => q.TaskId == taskId && !q.Users.Any(u => u.Id == currentUser.Id));
+            currentTask = _context.PartOneTasks.FirstOrDefault(q => q.TaskId == taskId && !q.Users.Any(u => u.Id == currentUser.Id));
             if (currentTask != null)
             {
                 currentTaskFirstPartId = currentTask.Id;
@@ -99,6 +101,28 @@ namespace ege_math_trainer.Windows
             FirstPartTasksWindow nextFirstPartTasksWindow = new FirstPartTasksWindow(currenttaskId, currentUser);
             nextFirstPartTasksWindow.Show();
             this.Close();
+        }
+
+        private void ButtonFirstPartTasksAnswer(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(BoxTaskAnswer.Text))
+            {
+                if (BoxTaskAnswer.Text == currentTask.RightAnswer)
+                {
+                    BoxTaskAnswer.Foreground = new SolidColorBrush(Colors.DarkGreen);
+                    BoxTaskAnswer.Background = new SolidColorBrush(Colors.LightGreen);
+                }
+                else
+                {
+                    BoxTaskAnswer.Foreground = new SolidColorBrush(Colors.DarkRed);
+                    BoxTaskAnswer.Background = new SolidColorBrush(Colors.LightPink);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Введите ответ в поле, чтобы проверить его.");
+                BoxTaskAnswer.Background = new SolidColorBrush(Colors.LightPink);
+            }
         }
     }
 }
