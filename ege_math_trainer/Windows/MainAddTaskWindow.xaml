@@ -1,0 +1,27 @@
+﻿<Window x:Class="ege_math_trainer.Windows.MainAddTaskWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ege_math_trainer.Windows"
+        mc:Ignorable="d"
+        Title="MainAddTaskWindow" Height="610" Width="700">
+    <StackPanel>
+        <TextBlock Text="Выбор задания для добавления" FontSize="30" HorizontalAlignment="Center"/>
+        <TextBlock Name="TextBlockWelcome" FontSize="15" Foreground="Gray" Margin="15 10 0 10"/>
+        <ListBox Margin="5" Name="ListBoxTasks" FontSize="14" Height="400">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Button BorderBrush="DarkViolet" Background="LightGray" 
+                        BorderThickness="1" Foreground="DarkViolet" Width="640" Height="50"
+                        Margin="2" Content="{Binding Name}" FontSize="18"
+                        Click="ButtonMaiAddTask" Tag="{Binding Id}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+            <Button Content="Вернуться к решению заданий" FontSize="20" Click="ButtonCanseltoMain" 
+                    Height="50" Width="320"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

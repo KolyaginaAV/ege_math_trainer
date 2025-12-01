@@ -12,21 +12,19 @@
             <Run Name="TextUserName"/>
         </TextBlock>
         <TextBlock Name="TextBlockWelcome" FontSize="15" Foreground="Gray" Margin="15 10 0 10"/>
-        <ListBox Margin="5" Name="ListBoxTasks"
-         FontSize="14" 
-         Height="400">
+        <ListBox Margin="5" Name="ListBoxTasks" FontSize="14" Height="400">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Button BorderBrush="DarkViolet" Background="LightGray" 
                     BorderThickness="1" Foreground="DarkViolet" Width="640" Height="50"
                     Margin="2" Content="{Binding Name}" FontSize="18"
-                    Click="ButtonMainTask" MouseDoubleClick="ButtonMainTaskDoubleClick" Tag="{Binding Id}"/>
+                    Click="ButtonMainTask" Tag="{Binding Id}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
             <Button Content="Выйти из аккаунта" FontSize="20" Click="ButtonCanselMain" Height="40" Width="200" Margin="2 2 2 15"/>
-            <Button Content="Добавить задание" Visibility="Collapsed" FontSize="20" 
+            <Button Content="Добавить задания" Visibility="Collapsed" FontSize="20" 
                     Name="ButtonNameMainAddTask" Click="ButtonMainAddTask" Margin="10 2 2 15"/>
         </StackPanel>
     </StackPanel>

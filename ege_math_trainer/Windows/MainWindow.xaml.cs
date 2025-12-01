@@ -59,24 +59,10 @@ namespace ege_math_trainer
             }
         }
 
-        private void ButtonMainTaskDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            if (currentUser.RoleId == 1)
-            {
-                if (sender is Button button && button.Tag is int taskId)
-                {
-                    AddTaskWindow addTaskWindow = new AddTaskWindow(taskId);
-                    if (addTaskWindow.ShowDialog() == true)
-                    {
-                        MessageBox.Show("Задание добавлено!", "Добавление задания");
-                    }
-                }
-            }
-        }
-
         private void ButtonMainAddTask(object sender, RoutedEventArgs e)
         {
-
+            MainAddTaskWindow mainAddTaskWindow = new MainAddTaskWindow(currentUser);
+            mainAddTaskWindow.ShowDialog();
         }
     }
 }
