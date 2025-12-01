@@ -8,25 +8,26 @@ namespace ege_math_trainer.Windows
     {
         private AppContext _context;
         public User currentUser;
-        public int currentTaskId;
-        public int currentTaskPart = 2;
-        public int currenttaskId;
+        public int currentSecondPartTaskId; //Id текущего задания
+        public int currentTaskPart = 2; //2 часть
+        public int currenttaskId; //Id текущего номера задания
+        public PartTwoTask currentTask; //текущее задание
         public SecondPartTasksWindow(int taskId, User user)
         {
             InitializeComponent();
 
             _context = new AppContext();
 
-            currentUser = _context.Users.FirstOrDefault(u => u.Id == user.Id);
+            SecondPartTaskTitle.Text = _context.Tasks.FirstOrDefault(q => q.Id == taskId).ToString();
+
+            currentUser = _context.Users.FirstOrDefault(q => q.Id == user.Id);
 
             currenttaskId = taskId;
 
-            SecondPartTaskTitle.Text = _context.Tasks.FirstOrDefault(q => q.Id == taskId).ToString();
-
-            PartTwoTask currentTask = _context.PartTwoTasks.FirstOrDefault(q => q.TaskId == taskId && !q.Users.Any(u => u.Id == currentUser.Id));
+            currentTask = _context.PartTwoTasks.FirstOrDefault(q => q.TaskId == taskId && !q.Users.Any(u => u.Id == currentUser.Id));
             if (currentTask != null)
             {
-                currentTaskId = currentTask.Id;
+                currentSecondPartTaskId = currentTask.Id;
                 TextBlockConditionSecondPartTask.Text = currentTask.Condition;
                 if (!string.IsNullOrEmpty(currentTask.ConditionImage))
                 {
@@ -44,12 +45,19 @@ namespace ege_math_trainer.Windows
                 if (result == MessageBoxResult.Yes)
                 {
                     List<PartTwoTask> completedTasks = new();
-                    completedTasks.Add(_context.PartTwoTasks.FirstOrDefault(q => q.TaskId == taskId));
+
+                    completedTasks.Add(_context.PartTwoTasks.FirstOrDefault(q => q.TaskId == currenttaskId));
 
                     foreach (PartTwoTask task in completedTasks)
                     {
+                        if (task == null)
+                        {
+                            MessageBox.Show("null!");
+                            return;
+                        }
                         task.Users.Remove(currentUser);
                     }
+
                     _context.SaveChanges();
 
                     SecondPartTasksWindow newWindow = new SecondPartTasksWindow(taskId, currentUser);
@@ -91,20 +99,20 @@ namespace ege_math_trainer.Windows
 
         private void ButtonSecondPartTasksDecision(object sender, RoutedEventArgs e)
         {
-            DecisionTaskWindow decisionTaskWindow = new DecisionTaskWindow(currentTaskId, currentTaskPart);
+            DecisionTaskWindow decisionTaskWindow = new DecisionTaskWindow(currentSecondPartTaskId, currentTaskPart);
             decisionTaskWindow.ShowDialog();
         }
 
         private void ButtonSecondPartTasksCriteria(object sender, RoutedEventArgs e)
         {
-            TaskEvaluationCriteriaWindow taskEvaluationCriteriaWindow = new TaskEvaluationCriteriaWindow(currentTaskId, currentTaskPart);
+            TaskEvaluationCriteriaWindow taskEvaluationCriteriaWindow = new TaskEvaluationCriteriaWindow(currentSecondPartTaskId, currentTaskPart);
             taskEvaluationCriteriaWindow.ShowDialog();
         }
 
         private void ButtonSecondPartTasksNextTask(object sender, RoutedEventArgs e)
         {
-            FirstPartTasksWindow nextFirstPartTasksWindow = new FirstPartTasksWindow(currenttaskId, currentUser);
-            nextFirstPartTasksWindow.Show();
+            SecondPartTasksWindow nextSecondPartTasksWindow = new SecondPartTasksWindow(currenttaskId, currentUser);
+            nextSecondPartTasksWindow.Show();
             this.Close();
         }
     }

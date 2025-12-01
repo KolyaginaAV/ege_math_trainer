@@ -38,26 +38,77 @@ namespace ege_math_trainer.Windows
         {
             if (currentTaskId > 0 && currentTaskId < 13)
             {
-                if (!string.IsNullOrEmpty(BoxAddTaskCondition.Text) && !string.IsNullOrEmpty(BoxAddTaskImageCondition.Text) &&
-                !string.IsNullOrEmpty(BoxAddTaskDecision.Text) && !string.IsNullOrEmpty(BoxAddTaskImageDecision.Text) &&
-                !string.IsNullOrEmpty(BoxAddTaskRightAnswer.Text))
+                if (!string.IsNullOrEmpty(BoxAddTaskCondition.Text) && !string.IsNullOrEmpty(BoxAddTaskDecision.Text) && !string.IsNullOrEmpty(BoxAddTaskRightAnswer.Text))
                 {
                     PartOneTask? provPartOneTask = _context.PartOneTasks.FirstOrDefault(q => q.Condition == BoxAddTaskCondition.Text);
                     if (provPartOneTask == null)
                     {
-                        PartOneTask newPartOneTask = new PartOneTask
+                        if (!string.IsNullOrEmpty(BoxAddTaskImageCondition.Text))
                         {
-                            Condition = BoxAddTaskCondition.Text,
-                            Decision = BoxAddTaskDecision.Text,
-                            ConditionImage = BoxAddTaskImageCondition.Text,
-                            DecisionImagePath = BoxAddTaskImageDecision.Text,
-                            RightAnswer = BoxAddTaskRightAnswer.Text
-                        };
+                            if (!string.IsNullOrEmpty(BoxAddTaskImageDecision.Text))
+                            {
+                                PartOneTask newPartOneTask = new PartOneTask
+                                {
+                                    Condition = BoxAddTaskCondition.Text,
+                                    Decision = BoxAddTaskDecision.Text,
+                                    ConditionImage = BoxAddTaskImageCondition.Text,
+                                    DecisionImagePath = BoxAddTaskImageDecision.Text,
+                                    RightAnswer = BoxAddTaskRightAnswer.Text
+                                };
 
-                        _context.PartOneTasks.Add(newPartOneTask);
-                        _context.SaveChanges();
+                                _context.PartOneTasks.Add(newPartOneTask);
+                                _context.SaveChanges();
 
-                        DialogResult = true;
+                                DialogResult = true;
+                            }
+                            else
+                            {
+                                PartOneTask newPartOneTask = new PartOneTask
+                                {
+                                    Condition = BoxAddTaskCondition.Text,
+                                    Decision = BoxAddTaskDecision.Text,
+                                    ConditionImage = BoxAddTaskImageCondition.Text,
+                                    RightAnswer = BoxAddTaskRightAnswer.Text
+                                };
+
+                                _context.PartOneTasks.Add(newPartOneTask);
+                                _context.SaveChanges();
+
+                                DialogResult = true;
+                            }
+                        }
+                        else
+                        {
+                            if (!string.IsNullOrEmpty(BoxAddTaskImageDecision.Text))
+                            {
+                                PartOneTask newPartOneTask = new PartOneTask
+                                {
+                                    Condition = BoxAddTaskCondition.Text,
+                                    Decision = BoxAddTaskDecision.Text,
+                                    DecisionImagePath = BoxAddTaskImageDecision.Text,
+                                    RightAnswer = BoxAddTaskRightAnswer.Text
+                                };
+
+                                _context.PartOneTasks.Add(newPartOneTask);
+                                _context.SaveChanges();
+
+                                DialogResult = true;
+                            }
+                            else
+                            {
+                                PartOneTask newPartOneTask = new PartOneTask
+                                {
+                                    Condition = BoxAddTaskCondition.Text,
+                                    Decision = BoxAddTaskDecision.Text,
+                                    RightAnswer = BoxAddTaskRightAnswer.Text
+                                };
+
+                                _context.PartOneTasks.Add(newPartOneTask);
+                                _context.SaveChanges();
+
+                                DialogResult = true;
+                            }
+                        }
                     }
                     else
                     {
@@ -71,26 +122,137 @@ namespace ege_math_trainer.Windows
             }
             else
             {
-                if (!string.IsNullOrEmpty(BoxAddTaskCondition.Text) && !string.IsNullOrEmpty(BoxAddTaskImageCondition.Text) &&
-                !string.IsNullOrEmpty(BoxAddTaskDecision.Text) && !string.IsNullOrEmpty(BoxAddTaskImageDecision.Text) &&
-                !string.IsNullOrEmpty(BoxAddTaskIndCriteria.Text))
+                if (!string.IsNullOrEmpty(BoxAddTaskCondition.Text) && !string.IsNullOrEmpty(BoxAddTaskIndCriteria.Text))
                 {
                     PartTwoTask? provPartTwoTask = _context.PartTwoTasks.FirstOrDefault(q => q.Condition == BoxAddTaskCondition.Text);
                     if (provPartTwoTask == null)
                     {
-                        PartTwoTask newPartTwoTask = new PartTwoTask
+                        if (!string.IsNullOrEmpty(BoxAddTaskImageCondition.Text))
                         {
-                            Condition = BoxAddTaskCondition.Text,
-                            Decision = BoxAddTaskDecision.Text,
-                            ConditionImage = BoxAddTaskImageCondition.Text,
-                            DecisionImagePath = BoxAddTaskImageDecision.Text,
-                            IndEvaluationCriteria = BoxAddTaskImageDecision.Text
-                        };
+                            if (!string.IsNullOrEmpty(BoxAddTaskDecision.Text))
+                            {
+                                if (!string.IsNullOrEmpty(BoxAddTaskImageDecision.Text))
+                                {
+                                    PartTwoTask newPartTwoTask = new PartTwoTask
+                                    {
+                                        Condition = BoxAddTaskCondition.Text,
+                                        Decision = BoxAddTaskDecision.Text,
+                                        ConditionImage = BoxAddTaskImageCondition.Text,
+                                        DecisionImagePath = BoxAddTaskImageDecision.Text,
+                                        IndEvaluationCriteria = BoxAddTaskImageDecision.Text
+                                    };
+                                    _context.PartTwoTasks.Add(newPartTwoTask);
+                                    _context.SaveChanges();
 
-                        _context.PartTwoTasks.Add(newPartTwoTask);
-                        _context.SaveChanges();
+                                    DialogResult = true;
+                                }
+                                else
+                                {
+                                    PartTwoTask newPartTwoTask = new PartTwoTask
+                                    {
+                                        Condition = BoxAddTaskCondition.Text,
+                                        Decision = BoxAddTaskDecision.Text,
+                                        ConditionImage = BoxAddTaskImageCondition.Text,
+                                        IndEvaluationCriteria = BoxAddTaskImageDecision.Text
+                                    };
+                                    _context.PartTwoTasks.Add(newPartTwoTask);
+                                    _context.SaveChanges();
 
-                        DialogResult = true;
+                                    DialogResult = true;
+                                }
+                            }
+                            else
+                            {
+                                if (!string.IsNullOrEmpty(BoxAddTaskImageDecision.Text))
+                                {
+                                    PartTwoTask newPartTwoTask = new PartTwoTask
+                                    {
+                                        Condition = BoxAddTaskCondition.Text,
+                                        ConditionImage = BoxAddTaskImageCondition.Text,
+                                        DecisionImagePath = BoxAddTaskImageDecision.Text,
+                                        IndEvaluationCriteria = BoxAddTaskImageDecision.Text
+                                    };
+                                    _context.PartTwoTasks.Add(newPartTwoTask);
+                                    _context.SaveChanges();
+
+                                    DialogResult = true;
+                                }
+                                else
+                                {
+                                    PartTwoTask newPartTwoTask = new PartTwoTask
+                                    {
+                                        Condition = BoxAddTaskCondition.Text,
+                                        ConditionImage = BoxAddTaskImageCondition.Text,
+                                        IndEvaluationCriteria = BoxAddTaskImageDecision.Text
+                                    };
+                                    _context.PartTwoTasks.Add(newPartTwoTask);
+                                    _context.SaveChanges();
+
+                                    DialogResult = true;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (!string.IsNullOrEmpty(BoxAddTaskDecision.Text))
+                            {
+                                if (!string.IsNullOrEmpty(BoxAddTaskImageDecision.Text))
+                                {
+                                    PartTwoTask newPartTwoTask = new PartTwoTask
+                                    {
+                                        Condition = BoxAddTaskCondition.Text,
+                                        Decision = BoxAddTaskDecision.Text,
+                                        DecisionImagePath = BoxAddTaskImageDecision.Text,
+                                        IndEvaluationCriteria = BoxAddTaskImageDecision.Text
+                                    };
+                                    _context.PartTwoTasks.Add(newPartTwoTask);
+                                    _context.SaveChanges();
+
+                                    DialogResult = true;
+                                }
+                                else
+                                {
+                                    PartTwoTask newPartTwoTask = new PartTwoTask
+                                    {
+                                        Condition = BoxAddTaskCondition.Text,
+                                        Decision = BoxAddTaskDecision.Text,
+                                        IndEvaluationCriteria = BoxAddTaskImageDecision.Text
+                                    };
+                                    _context.PartTwoTasks.Add(newPartTwoTask);
+                                    _context.SaveChanges();
+
+                                    DialogResult = true;
+                                }
+                            }
+                            else
+                            {
+                                if (!string.IsNullOrEmpty(BoxAddTaskImageDecision.Text))
+                                {
+                                    PartTwoTask newPartTwoTask = new PartTwoTask
+                                    {
+                                        Condition = BoxAddTaskCondition.Text,
+                                        DecisionImagePath = BoxAddTaskImageDecision.Text,
+                                        IndEvaluationCriteria = BoxAddTaskImageDecision.Text
+                                    };
+                                    _context.PartTwoTasks.Add(newPartTwoTask);
+                                    _context.SaveChanges();
+
+                                    DialogResult = true;
+                                }
+                                else
+                                {
+                                    PartTwoTask newPartTwoTask = new PartTwoTask
+                                    {
+                                        Condition = BoxAddTaskCondition.Text,
+                                        IndEvaluationCriteria = BoxAddTaskImageDecision.Text
+                                    };
+                                    _context.PartTwoTasks.Add(newPartTwoTask);
+                                    _context.SaveChanges();
+
+                                    DialogResult = true;
+                                }
+                            }
+                        }
                     }
                     else
                     {

@@ -11,18 +11,20 @@ namespace ege_math_trainer.Windows
     {
         private AppContext _context;
         public User currentUser;
-        public int currentTaskFirstPartId;
-        public int currentTaskPart = 1;
-        public int currenttaskId;
-        public PartOneTask currentTask;
+        public int currentTaskFirstPartId; //Id текущего задания
+        public int currentTaskPart = 1; //1 часть
+        public int currenttaskId; //Id текущего номера задания
+        public PartOneTask currentTask; //текущее задание
         public FirstPartTasksWindow(int taskId, User user)
         {
             InitializeComponent();
 
             _context = new AppContext();
+
             FirstPartTaskTitle.Text = _context.Tasks.FirstOrDefault(q => q.Id == taskId).ToString();
 
-            currentUser = _context.Users.FirstOrDefault(u => u.Id == user.Id); ;
+            currentUser = _context.Users.FirstOrDefault(u => u.Id == user.Id); 
+
             currenttaskId = taskId;
 
             currentTask = _context.PartOneTasks.FirstOrDefault(q => q.TaskId == taskId && !q.Users.Any(u => u.Id == currentUser.Id));
@@ -46,14 +48,17 @@ namespace ege_math_trainer.Windows
                 if (result == MessageBoxResult.Yes)
                 {
                     List<PartOneTask> completedTasks = new();
-                    completedTasks.Add(_context.PartOneTasks.FirstOrDefault(q => q.TaskId == taskId));
+
+                    completedTasks.Add(_context.PartOneTasks.FirstOrDefault(q => q.TaskId == currenttaskId));
 
                     foreach (PartOneTask task in completedTasks)
                     {
                         task.Users.Remove(currentUser);
                     }
+
                     _context.SaveChanges();
-                    FirstPartTasksWindow newWindow = new FirstPartTasksWindow(taskId, currentUser);
+
+                    FirstPartTasksWindow newWindow = new FirstPartTasksWindow(currenttaskId, currentUser);
                     newWindow.Show();
                     this.Close();
                 }

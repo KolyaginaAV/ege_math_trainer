@@ -61,7 +61,7 @@ namespace ege_math_trainer
                 RightAnswer = "4", TaskId = Task1.Id};
             PartOneTask partOneTask1_2 = new PartOneTask() { Id = 2, Condition = "  В треугольнике ABC угол C равен 90°, AB=10, BC=√19. Найдите cosA.",
                 ConditionImage = "../ImagesCondition/condition1.png", Decision = "  Косинус это отношение прилежащего катета к гипотенузе. В данном случае cosA=AC/AB.\n    Нам неизвестно AC, находим его по обратной теореме Пифагора:\n      AC=√AB²-BC²=√81=9.\n    Теперь нам всё известно. Подставляем:\n     cosA=9/10=0,9",
-                RightAnswer = "5", TaskId = Task1.Id};
+                RightAnswer = "0.9", TaskId = Task1.Id};
             PartOneTask partOneTask2 = new PartOneTask() { Id = 3, Condition = "    Даны векторы a(25; 0) и b(1; −5). Найдите длину вектора a-4b.",
                 Decision = "    Для начала найдем значение вектора 4b, для этого каждую его кооринату умножим на 4. Получаем: (4*1;4*(−5))=(4;−20).\n   Для того чтобы найти значение длины вектора a-4b найдем для начала его координаты:\n      a-4b=(х2-х1;у2-у1)=(4-25;-20-0)=(-21;-20).\n  Длина вектора a-4b равна:\n     |a-4b|=√(-21)²+(-20)²=√441+400=√841=29.",
                 RightAnswer = "29", TaskId = Task2.Id };
