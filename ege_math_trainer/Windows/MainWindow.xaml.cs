@@ -24,6 +24,7 @@ namespace ege_math_trainer
             {
                 TextBlockWelcome.Text = "Выберите задание, которое хотите порешать\nИли сделав двойной клик по заданию, добавьте новый пример этого задания";
                 TextUserName.Text = user.Name + " " + user.Patronymic + "!";
+                ButtonNameMainAddTask.Visibility = Visibility.Visible;
             }
             else
             {
@@ -71,6 +72,11 @@ namespace ege_math_trainer
                     }
                 }
             }
+        }
+
+        private void ButtonMainAddTask(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

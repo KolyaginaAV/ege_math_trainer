@@ -26,6 +26,8 @@
         </ListBox>
         <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
             <Button Content="Выйти из аккаунта" FontSize="20" Click="ButtonCanselMain" Height="40" Width="200" Margin="2 2 2 15"/>
+            <Button Content="Добавить задание" Visibility="Collapsed" FontSize="20" 
+                    Name="ButtonNameMainAddTask" Click="ButtonMainAddTask" Margin="10 2 2 15"/>
         </StackPanel>
     </StackPanel>
 </Window>
