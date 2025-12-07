@@ -82,25 +82,25 @@ namespace ege_math_trainer
             PartOneTask partOneTask5 = new PartOneTask() { Id = 9, Condition = "    Перед началом футбольного матча судья бросает монетку, чтобы определить, какая из команд начнёт игру с мячом. Команда «Изумруд» играет два матча с разными командами. Найдите вероятность того, что в этих матчах команда «Изумруд» начнёт игру с мячом не больше одного раза.",
                 Decision = "    Рассмотрим все возможные исходы жеребьёвки для двух матчей. Каждый матч имеет два равновероятных исхода: команда «Изумруд» начинает игру — обозначим за 1 — или не начинает — обозначим за 0.\n    Перечислим все возможные исходы: 00, 01, 10, 11. Значит, всевозможных исходов 4.\n    Благоприятные исходы это те, в которых команда «Изумруд» начнёт игру с мячом не более одного раза. Перечислим благоприятные исходы: 00, 10, 01. Значит, благоприятных исходов 3.\n    Вероятность равна отношению числа благоприятных исходов к числу всех исходов:\n        p=3/4=0.75",
                 RightAnswer = "0.75", TaskId = Task5.Id };
-            PartOneTask partOneTask5_2 = new PartOneTask() { Id = 10, Condition = "   Какова вероятность того, что случайно выбранный телефонный номер оканчивается двумя чётными цифрами?",
+            PartOneTask partOneTask5_2 = new PartOneTask() { Id = 10, Condition = "    Какова вероятность того, что случайно выбранный телефонный номер оканчивается двумя чётными цифрами?",
                 Decision = "    Вероятность того, что на одном из требуемых мест окажется чётное число, равна 0,5. Следовательно, вероятность того, что на двух местах одновременно окажутся два чётных числа, равна\n        0,5 · 0,5  =  0,25.",
                 RightAnswer = "0.25", TaskId = Task5.Id };
-            PartOneTask partOneTask6 = new PartOneTask() { Id = 11, Condition = "   Найдите корень уравнения", ConditionImage = "../ImagesCondition/partOneTask6condition.jpg",
+            PartOneTask partOneTask6 = new PartOneTask() { Id = 11, Condition = "    Найдите корень уравнения", ConditionImage = "../ImagesCondition/partOneTask6condition.jpg",
                 Decision = "    Перейдём от уравнения к системе и решим её:", DecisionImagePath = "../ImagesDecision/partOneTask6decision.jpg", 
                 RightAnswer = "1.4", TaskId = Task6.Id };
-            PartOneTask partOneTask6_2 = new PartOneTask() { Id = 12, Condition = " Найдите корень уравнения (x-1)³=-8", Decision = "   Извлекая кубический корень из обеих частей уравнения, получаем\n        x-1=-2. Oткуда\n        x=-1.",  
+            PartOneTask partOneTask6_2 = new PartOneTask() { Id = 12, Condition = "    Найдите корень уравнения (x-1)³=-8", Decision = "   Извлекая кубический корень из обеих частей уравнения, получаем\n        x-1=-2. Oткуда\n        x=-1.",  
                 RightAnswer = "-1", TaskId = Task6.Id };
-            PartOneTask partOneTask7 = new PartOneTask() { Id = 13, Condition = "   Найдите значение выражения (64⁹)³:(16⁵)⁸",
+            PartOneTask partOneTask7 = new PartOneTask() { Id = 13, Condition = "    Найдите значение выражения (64⁹)³:(16⁵)⁸",
                 Decision = "    Воспользуемся свойствами степеней и найдём значение выражения.", DecisionImagePath = "../ImagesDecision/partOneTask7decision.jpg",
                 RightAnswer = "4", TaskId = Task7.Id };
             PartOneTask partOneTask7_2 = new PartOneTask() { Id = 14, Condition = "    Найдите значение выражения log₃1,8+log₃5.", Decision = "    Найдем значение выражения:\n        log₃1,8+log₃5=log₃(1,8*5)=log₃9=2",
                 RightAnswer = "2", TaskId = Task7.Id };
-            PartOneTask partOneTask8 = new PartOneTask() { Id = 15, Condition = "\n        На рисунке изображён график функции y = f(x), определённой на интервале (−1;10). Определите количество целых точек, в которых производная функции f(x) отрицательна.",
+            PartOneTask partOneTask8 = new PartOneTask() { Id = 15, Condition = "    На рисунке изображён график функции y = f(x), определённой на интервале (−1;10). Определите количество целых точек, в которых производная функции f(x) отрицательна.",
                 ConditionImage = "../ImagesCondition/partOneTask8condition.jpg", Decision = "    В целых точках экстремума 0, 2, 5 производная равна нулю, тогда эти точки точно учитывать не будем.\n    Среди других целых точек на интервале (−1;10) промежуткам убывания функции f(x) принадлежат точки 3, 4. \n    Таким образом, производная функции y = f(x) отрицательна в двух целых точках.",
                 RightAnswer = "2", TaskId = Task8.Id };
-            PartOneTask partOneTask8_2 = new PartOneTask() { Id = 16, Condition = "    Материальная точка движется прямолинейно по закону x(t)=6t²-48t+17 (где x — расстояние от точки отсчета в метрах, t — время в секундах, измеренное с начала движения). Найдите ее скорость (в м/⁠с) в момент времени t = 9с.",
-                Decision = "    Найдем закон изменения скорости:\n        V(t)=x'(t)=12t-48\n    При t=9c имеем:\n        V(9)=12*9-48=60м/с",
-                RightAnswer = "60", TaskId = Task8.Id };
+            //PartOneTask partOneTask8_2 = new PartOneTask() { Id = 16, Condition = "    Материальная точка движется прямолинейно по закону x(t)=6t²-48t+17 (где x — расстояние от точки отсчета в метрах, t — время в секундах, измеренное с начала движения). Найдите ее скорость (в м/⁠с) в момент времени t = 9с.",
+            //    Decision = "    Найдем закон изменения скорости:\n        V(t)=x'(t)=12t-48\n    При t=9c имеем:\n        V(9)=12*9-48=60м/с",
+            //    RightAnswer = "60", TaskId = Task8.Id };
             PartOneTask partOneTask9 = new PartOneTask() { Id = 17, Condition = "    В боковой стенке высокого цилиндрического бака у самого дна закреплён кран. После его открытия вода начинает вытекать из бака, при этом высота столба воды в нём меняется по закону H(t) =at²+ bt+H₀, где H — высота столба воды в метрах, H₀ = 8 м — начальный уровень воды, a = 1/72 м/мин² и b = − 2/3 м/мин — постоянные, t — время в минутах, прошедшее с момента открытия крана. Сколько минут вода будет вытекать из бака?",
                 Decision = "    Задача сводится к решению квадратного уравнения с дробными коэффициентами.\n    Из условия известно, что H — это высота столба воды в момент времени t.\n    Нам необходимо найти время t, при котором вся вода вытечет из бака, то есть высота столба воды H будет равна нулю. Тогда имеем уравнение, решив, которое получаем, что вода будет вытекать из бака в течение 24 минут.",
                 DecisionImagePath = "../ImagesDecision/partOneTask9decision.jpg", RightAnswer = "24", TaskId = Task9.Id };
@@ -190,7 +190,7 @@ namespace ege_math_trainer
             modelBuilder.Entity<Task>().HasData(Task1, Task2, Task3, Task4, Task5, Task6, Task7, Task8, Task9, Task10, Task11, Task12, Task13, Task14, Task15, Task16, Task17, Task18, Task19);
             modelBuilder.Entity<Criteria>().HasData(criteria13, criteria14, criteria15, criteria16, criteria17, criteria18, criteria19);
             modelBuilder.Entity<PartOneTask>().HasData(partOneTask1, partOneTask1_2, partOneTask2, partOneTask2_2, partOneTask3, partOneTask3_2, partOneTask4, partOneTask4_2, partOneTask5, partOneTask5_2, partOneTask6, partOneTask6_2,
-                partOneTask7, partOneTask7_2, partOneTask8, partOneTask8_2, partOneTask9, partOneTask9_2, partOneTask10, partOneTask10_2, partOneTask11, partOneTask11_2, partOneTask12, partOneTask12_2);
+                partOneTask7, partOneTask7_2, partOneTask8, partOneTask9, partOneTask9_2, partOneTask10, partOneTask10_2, partOneTask11, partOneTask11_2, partOneTask12, partOneTask12_2);
             modelBuilder.Entity<PartTwoTask>().HasData(partTwoTask13, partTwoTask13_2, partTwoTask14, partTwoTask14_2, partTwoTask15, partTwoTask15_2, partTwoTask16, partTwoTask16_2,
                 partTwoTask17, partTwoTask17_2, partTwoTask18, partTwoTask18_2, partTwoTask19, partTwoTask19_2);
 

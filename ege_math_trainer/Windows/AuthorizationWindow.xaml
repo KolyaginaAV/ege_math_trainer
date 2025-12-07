@@ -5,20 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ege_math_trainer.Windows"
         mc:Ignorable="d"
-        Title="AuthorizationWindow" Height="350" Width="380">
+        Title="AuthorizationWindow" Height="350" Width="380" Background="#FFF5F7FF"
+        WindowStartupLocation="CenterScreen">
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-        <TextBlock Text="ЕГЭ по математике" FontSize="30" HorizontalAlignment="Center"/>
+        <TextBlock Text="ЕГЭ по математике" FontSize="30" HorizontalAlignment="Center" FontWeight="Bold" 
+                   Foreground="#FF6C63FF"/>
         <StackPanel Margin="5">
-            <Label Content="Логин" FontSize="25"/>
-            <TextBox Name="BoxLogin" FontSize="18" Width="300" Height="30"/>
+            <Label Content="Логин" FontSize="25" Foreground="#FF666666"/>
+            <TextBox Name="BoxLogin" FontSize="18" Width="300" Height="30" BorderBrush="#FF9D9BFF"/>
         </StackPanel>
         <StackPanel Margin="5">
-            <Label Content="Пароль" FontSize="25"/>
-            <TextBox Name="BoxPassword" FontSize="18" Width="300" Height="30"/>
+            <Label Content="Пароль" FontSize="25" Foreground="#FF666666"/>
+            <TextBox Name="BoxPassword" FontSize="18" Width="300" Height="30" BorderBrush="#FF9D9BFF"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
-            <Button Content="Войти" FontSize="20" Click="ButtonAuth" Height="40" Width="80" Margin="5"/>
-            <Button Content="Регистрация" FontSize="20" Click="ButtonAuthReg" Height="40" Width="140" Margin="5"/>
+            <Button Content="Войти" FontSize="20" Click="ButtonAuth" Height="40" Width="80" Margin="5" 
+                    Foreground="White" Background="#FF6C63FF"/>
+            <Button Content="Регистрация" FontSize="20" Click="ButtonAuthReg" Height="40" Width="140" 
+                    Background="#FF36D1DC" Foreground="White" Margin="5"/>
         </StackPanel>
     </StackPanel>
 </Window>

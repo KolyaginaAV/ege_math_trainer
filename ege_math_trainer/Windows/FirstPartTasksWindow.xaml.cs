@@ -19,14 +19,9 @@ namespace ege_math_trainer.Windows
 
             FirstPartTaskTitle.Text = _context.Tasks.FirstOrDefault(q => q.Id == taskId).ToString();
 
-            
-            List<PartOneTask> allTasksForThisId = _context.PartOneTasks.Where(q => q.TaskId == taskId).ToList();
-            List<PartOneTask> unsolvedTasks = allTasksForThisId.Where(q => !q.Users.Any(u => u.Id == currentUser.Id)).ToList();
-
-            if (unsolvedTasks.Any())
+            currentTask = _context.PartOneTasks.FirstOrDefault(q => q.TaskId == taskId && !q.Users.Any(u => u.Id == currentUser.Id));
+            if (currentTask != null)
             {
-                // Берем ПЕРВОЕ из нерешенных заданий
-                currentTask = unsolvedTasks.First();
                 TextBlockConditionFirstPartTask.Text = currentTask.Condition;
                 if (!string.IsNullOrEmpty(currentTask.ConditionImage))
                 {
@@ -59,42 +54,7 @@ namespace ege_math_trainer.Windows
                     this.Close();
                 }
             }
-                //currentTask = _context.PartOneTasks.FirstOrDefault(q => q.TaskId == taskId && !q.Users.Any(u => u.Id == currentUser.Id));
-                //if (currentTask != null)
-                //{
-                //    TextBlockConditionFirstPartTask.Text = currentTask.Condition;
-                //    if (!string.IsNullOrEmpty(currentTask.ConditionImage))
-                //    {
-                //        ImageConditionFirstPartTask.Source = new BitmapImage(new Uri(currentTask.ConditionImage, UriKind.RelativeOrAbsolute));
-                //        //BitmapImage - класс WPF для работы с изображениями (принимает Uri и загружает изображение по этому пути)
-                //        //Uri - адрес; UriKind.Relative - относительный путь (не полный); UriKind.Absolute - абсолютный адрес
-                //    }
-                //    currentTask.Users.Add(currentUser);
-                //    _context.SaveChanges();
-                //}
-                //else
-                //{
-                //    MessageBoxResult result = MessageBox.Show("Вы уже решили все задания этого номера, хотите прорешать их снова?",
-                //        "Сообщение", MessageBoxButton.YesNo);
-                //    if (result == MessageBoxResult.Yes)
-                //    {
-                //        List<PartOneTask> completedTasks = new();
-
-                //        completedTasks.Add(_context.PartOneTasks.FirstOrDefault(q => q.TaskId == currentTask.TaskId));
-
-                //        foreach (PartOneTask task in completedTasks)
-                //        {
-                //            task.Users.Remove(currentUser);
-                //        }
-
-                //        _context.SaveChanges();
-
-                //        FirstPartTasksWindow newWindow = new FirstPartTasksWindow(currentTask.TaskId, currentUser);
-                //        newWindow.Show();
-                //        this.Close();
-                //    }
-                //}
-            }
+        }
 
         private void ButtonFirstPartTasksDecision(object sender, RoutedEventArgs e)
         {
@@ -162,4 +122,3 @@ namespace ege_math_trainer.Windows
         }
     }
 }
-

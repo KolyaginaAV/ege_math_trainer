@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Media.Imaging;
 using ege_math_trainer.Models;
 using Microsoft.Win32;
@@ -58,7 +57,8 @@ namespace ege_math_trainer.Windows
                                     ConditionImage = AddImageCondition,
                                     DecisionImagePath = AddImageDecision,
                                     RightAnswer = BoxAddTaskRightAnswer.Text,
-                                    TaskId = currentTaskId
+                                    TaskId = currentTaskId,
+                                    Users = new List<User>()
                                 };
 
                                 _context.PartOneTasks.Add(newPartOneTask);
@@ -74,7 +74,8 @@ namespace ege_math_trainer.Windows
                                     Decision = BoxAddTaskDecision.Text,
                                     ConditionImage = AddImageCondition,
                                     RightAnswer = BoxAddTaskRightAnswer.Text,
-                                    TaskId = currentTaskId
+                                    TaskId = currentTaskId,
+                                    Users = new List<User>()
                                 };
 
                                 _context.PartOneTasks.Add(newPartOneTask);
@@ -93,7 +94,8 @@ namespace ege_math_trainer.Windows
                                     Decision = BoxAddTaskDecision.Text,
                                     DecisionImagePath = AddImageDecision,
                                     RightAnswer = BoxAddTaskRightAnswer.Text,
-                                    TaskId = currentTaskId
+                                    TaskId = currentTaskId,
+                                    Users = new List<User>()
                                 };
 
                                 _context.PartOneTasks.Add(newPartOneTask);
@@ -108,7 +110,8 @@ namespace ege_math_trainer.Windows
                                     Condition = BoxAddTaskCondition.Text,
                                     Decision = BoxAddTaskDecision.Text,
                                     RightAnswer = BoxAddTaskRightAnswer.Text,
-                                    TaskId = currentTaskId
+                                    TaskId = currentTaskId,
+                                    Users = new List<User>()
                                 };
 
                                 _context.PartOneTasks.Add(newPartOneTask);

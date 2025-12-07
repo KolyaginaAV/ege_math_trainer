@@ -5,28 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ege_math_trainer.Windows"
         mc:Ignorable="d"
-        Title="FirstPartTasksWindow" SizeToContent ="Height" Width="700">
+        Title="FirstPartTasksWindow" SizeToContent ="Height" Width="700" WindowStartupLocation="CenterScreen"
+        Background="#FFF5F7FF">
     <StackPanel>
-        <TextBlock Name="FirstPartTaskTitle" FontSize="30" TextWrapping = "Wrap" HorizontalAlignment="Center"/>
-        <StackPanel Margin="5">
-            <TextBlock Text="Условие" FontSize="22"/>
-            <TextBlock Name="TextBlockConditionFirstPartTask" TextWrapping = "Wrap" FontSize="18" Margin="0 3 0 0"/>
+        <TextBlock Name="FirstPartTaskTitle" FontSize="30" TextWrapping = "Wrap" HorizontalAlignment="Center" FontWeight="Bold" Foreground="#FF6C63FF"/>
+        <StackPanel Margin="10 5 5 5">
+            <TextBlock Text="Условие" FontSize="22" Foreground="#FF333333" FontWeight="SemiBold"/>
+            <TextBlock Name="TextBlockConditionFirstPartTask" TextWrapping = "Wrap" FontSize="18" 
+                       Foreground="#FF333333" Margin="0 3 0 0"/>
             <Image Name="ImageConditionFirstPartTask" MaxWidth="200" MaxHeight="200" Margin="5"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Ответ: " FontSize="22"/>
-            <TextBox Name="BoxTaskAnswer" Width="80" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" Margin="10 7 7 7">
+            <TextBlock Text="Ответ: " Foreground="#FF333333" FontWeight="SemiBold" FontSize="22"/>
+            <TextBox Name="BoxTaskAnswer" Width="80" FontSize="18" HorizontalAlignment="Center" 
+                     Background="White" BorderBrush="#FFD1C4E9" VerticalAlignment="Center"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="7">
-            <Button Content="Проверить ответ" Foreground="Purple" FontSize="18" 
+            <Button Content="Проверить ответ" Foreground="Honeydew" FontSize="18" Background="RosyBrown"
                     Click="ButtonFirstPartTasksAnswer" Width="170" Height="40"/>
-            <Button Content="Посмотреть решение" Foreground="Purple" Click="ButtonFirstPartTasksDecision" FontSize="18"  Width="200" Height="40" Margin="5 0 0 0"/>
+            <Button Content="Посмотреть решение" Foreground="Honeydew" Background="RosyBrown"  Width="200"
+                    Click="ButtonFirstPartTasksDecision" FontSize="18" Height="40" Margin="5 0 0 0"/>
         </StackPanel>
-        <Button Content="К следующему заданию" Foreground="Green" FontSize="18"  Width="220" 
+        <Button Content="К следующему заданию" Foreground="LightCyan" Background="#B39DDB" FontSize="18"  Width="220" 
                 Height="40" Click="ButtonFirstPartTasksNextTask"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="7">
-            <Button Content="Выход" Click="ButtonFirstPartTasksCansel" FontSize="18" Width="100" Height="40"/>
-            <Button Content="Вернуться к выбору задания" Click="ButtonFirstPartTasksCanselToMain" FontSize="18"  Width="255" Height="40" Margin="5 0 0 0"/>
+            <Button Content="Выход" Click="ButtonFirstPartTasksCansel" FontSize="18" Width="100" Background="#4DB6AC" 
+                    Foreground="Beige" Height="40"/>
+            <Button Content="Вернуться к выбору задания" Click="ButtonFirstPartTasksCanselToMain" 
+                    Background="#4DB6AC" Foreground="Beige" FontSize="18"  Width="255" Height="40" Margin="5 0 0 0"/>
         </StackPanel>
     </StackPanel>
 </Window>

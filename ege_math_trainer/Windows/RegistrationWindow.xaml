@@ -5,47 +5,58 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ege_math_trainer.Windows"
         mc:Ignorable="d"
-        Title="Окно регистрации" SizeToContent ="WidthAndHeight" WindowStartupLocation = "CenterScreen">
+        Title="Окно регистрации" SizeToContent ="WidthAndHeight" Left="100" Top="0" 
+        Background="#FFF5F7FF">
     <StackPanel Orientation="Vertical">
-        <TextBlock Text="Регистрация" FontSize="30" HorizontalAlignment="Center" Margin="5" FontWeight="Bold" />
+        <TextBlock Text="Регистрация" FontSize="30" HorizontalAlignment="Center" Margin="5" FontWeight="Bold" 
+                   Foreground="#FF6C63FF"/>
         <StackPanel Margin="10 5 10 5">
-            <Label Content="Логин" FontSize="20" FontWeight="Bold"/>
-            <TextBox Name="BoxRegLogin" FontSize="18" Width="490" Height="35" VerticalContentAlignment ="Center"  HorizontalAlignment="Left"/>
+            <Label Content="Логин" FontSize="20" FontWeight="SemiBold" Foreground="#4b63cc"/>
+            <TextBox Name="BoxRegLogin" FontSize="18" Width="490" Height="25" VerticalContentAlignment ="Center" 
+                     HorizontalAlignment="Left" BorderBrush="#FFD1C4E9"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="10 5 10 5">
-            <Label Content="Пароль" FontSize="20" FontWeight="Bold"/>
-            <TextBox Name="BoxRegPassword" FontSize="18" Width="490" Height="35" VerticalContentAlignment ="Center" HorizontalAlignment="Left" />
+            <Label Content="Пароль" FontSize="20" FontWeight="SemiBold" Foreground="#4b63cc"/>
+            <TextBox Name="BoxRegPassword" FontSize="18" Width="490" Height="25" VerticalContentAlignment ="Center" 
+                     HorizontalAlignment="Left" BorderBrush="#FFD1C4E9"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="10 5 10 5">
-            <Label Content="Фамилия" FontSize="20" FontWeight="Bold"/>
-            <TextBox Name="BoxRegSurname" FontSize="18" Width="490" Height="35" VerticalContentAlignment ="Center" HorizontalAlignment="Left"/>
+            <Label Content="Фамилия" FontSize="20" FontWeight="SemiBold" Foreground="#4b63cc"/>
+            <TextBox Name="BoxRegSurname" FontSize="18" Width="490" Height="25" VerticalContentAlignment ="Center" 
+                     HorizontalAlignment="Left" BorderBrush="#FFD1C4E9"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="10 5 10 5">
-            <Label Content="Имя" FontSize="20" FontWeight="Bold"/>
-            <TextBox Name="BoxRegName" FontSize="18" Height="35" Width="490" VerticalContentAlignment ="Center" HorizontalAlignment="Left"/>
+            <Label Content="Имя" FontSize="20" FontWeight="SemiBold" Foreground="#4b63cc"/>
+            <TextBox Name="BoxRegName" FontSize="18" Height="25" Width="490" VerticalContentAlignment ="Center" 
+                     HorizontalAlignment="Left" BorderBrush="#FFD1C4E9"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="10 5 10 5">
-            <Label Content="Отчество" FontSize="20" FontWeight="Bold"/>
-            <TextBox Name="BoxRegPatronymic" FontSize="18" Width="490" Height="35" VerticalContentAlignment ="Center" HorizontalAlignment="Left"/>
+            <Label Content="Отчество" FontSize="20" FontWeight="SemiBold" Foreground="#4b63cc"/>
+            <TextBox Name="BoxRegPatronymic" FontSize="18" Width="490" Height="25" VerticalContentAlignment ="Center" 
+                     HorizontalAlignment="Left" BorderBrush="#FFD1C4E9"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="10 5 10 5">
-            <Label Content="Номер телефона" FontSize="20" FontWeight="Bold"/>
-            <TextBox Name="BoxRegPhone" FontSize="18" Height="35" Width="490" VerticalContentAlignment ="Center" HorizontalAlignment="Left"/>
+            <Label Content="Номер телефона" FontSize="20" FontWeight="SemiBold" Foreground="#4b63cc"/>
+            <TextBox Name="BoxRegPhone" FontSize="18" Height="25" Width="490" VerticalContentAlignment ="Center" 
+                     HorizontalAlignment="Left" BorderBrush="#FFD1C4E9"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="10 5 10 5">
-            <Label Content="Почта" FontSize="20" FontWeight="Bold"/>
-            <TextBox Name="BoxRegEmail" FontSize="18" Width="490" Height="35" VerticalContentAlignment ="Center" HorizontalAlignment="Left"/>
+            <Label Content="Почта" FontSize="20" FontWeight="SemiBold" Foreground="#4b63cc"/>
+            <TextBox Name="BoxRegEmail" FontSize="18" Width="490" Height="25" VerticalContentAlignment ="Center" 
+                     HorizontalAlignment="Left" BorderBrush="#FFD1C4E9"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="10 5 10 5">
-            <Label Content="Роль" FontSize="20" FontWeight="Bold"/>
+            <Label Content="Роль" FontSize="20" FontWeight="SemiBold" Foreground="#4b63cc"/>
             <StackPanel Margin="15 0 0 0">
-                <RadioButton Name ="RadioButtonTeacher" GroupName="Role" Content="Учитель" FontSize="20"/>
-                <RadioButton Name ="RadioButtonStudent" GroupName="Role" IsChecked="True" Content="Ученик" FontSize="20"/>
+                <RadioButton Name ="RadioButtonTeacher" GroupName="Role" Content="Учитель" FontSize="20" Foreground="#4b63cc"/>
+                <RadioButton Name ="RadioButtonStudent" GroupName="Role" IsChecked="True" Content="Ученик" FontSize="20" Foreground="#4b63cc"/>
             </StackPanel>
         </StackPanel>
         <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Content="Зарегистрироваться" FontSize="25" Click="ButtonReg" Width="250" Height="50" Margin="5"/>
-            <Button Content="Отмена" FontSize="25" Click="ButtonRegCancel" Width="130" Margin="5"/>
+            <Button Content="Зарегистрироваться" FontSize="25" Click="ButtonReg" Width="250" Height="50" 
+                    Margin="5" Background="#FF9D9BFF" Foreground="Beige"/>
+            <Button Content="Отмена" FontSize="25" Click="ButtonRegCancel" Width="130" Margin="5"
+                    Background="#a5a894" Foreground="Beige"/>
         </StackPanel>
     </StackPanel>
 </Window>
