@@ -47,7 +47,7 @@
             <Button Content="Сохранить" FontSize="25" Click="ButtonAddTaskSave" Width="150" 
                     Background="#FF9D9BFF" Foreground="Beige" Height="40" Margin="5"/>
             <Button Content="Отмена" FontSize="25" Click="ButtonAddTaskCansel" Width="150"
-                    Background="#a5a894" Foreground="Beige" Margin="5"/>
+                    Background="#acacac" Foreground="Beige" Margin="5"/>
         </StackPanel>
     </StackPanel>
 </Window>

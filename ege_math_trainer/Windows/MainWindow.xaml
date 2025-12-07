@@ -24,12 +24,11 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
-            <Button Content="Выйти из аккаунта" FontSize="20" Click="ButtonCanselMain" Height="50" Width="200" 
-                    Margin="2 2 2 15" Background="#4DB6AC" Foreground="Beige"/>
             <Button Content="Добавить задания"  FontSize="20" Name="ButtonNameMainAddTask"
-                    Click="ButtonMainAddTask" Margin="10 2 2 15" Background="#91b3f2
-" 
-                    Foreground="Beige" Width="200" Height="50"/>
+                    Click="ButtonMainAddTask" Background="PaleGreen" 
+                    Foreground="Beige" Width="200" Height="50" Margin="2 2 2 15"/>
+            <Button Content="Выйти из аккаунта" FontSize="20" Click="ButtonCanselMain" Height="50" Width="200" 
+                    Background="#acacac" Foreground="Beige"  Margin="10 2 2 15"/>
         </StackPanel>
     </StackPanel>
 </Window>

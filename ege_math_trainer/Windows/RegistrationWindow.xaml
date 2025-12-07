@@ -56,7 +56,7 @@
             <Button Content="Зарегистрироваться" FontSize="25" Click="ButtonReg" Width="250" Height="50" 
                     Margin="5" Background="#FF9D9BFF" Foreground="Beige"/>
             <Button Content="Отмена" FontSize="25" Click="ButtonRegCancel" Width="130" Margin="5"
-                    Background="#a5a894" Foreground="Beige"/>
+                    Background="#acacac" Foreground="Beige"/>
         </StackPanel>
     </StackPanel>
 </Window>

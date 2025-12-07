@@ -11,18 +11,18 @@
         <TextBlock Text="ЕГЭ по математике" FontSize="30" HorizontalAlignment="Center" FontWeight="Bold" 
                    Foreground="#FF6C63FF"/>
         <StackPanel Margin="5">
-            <Label Content="Логин" FontSize="25" Foreground="#FF666666"/>
+            <Label Content="Логин" FontSize="25" FontWeight="SemiBold" Foreground="#4b63cc"/>
             <TextBox Name="BoxLogin" FontSize="18" Width="300" Height="30" BorderBrush="#FF9D9BFF"/>
         </StackPanel>
         <StackPanel Margin="5">
-            <Label Content="Пароль" FontSize="25" Foreground="#FF666666"/>
+            <Label Content="Пароль" FontSize="25" FontWeight="SemiBold" Foreground="#4b63cc"/>
             <TextBox Name="BoxPassword" FontSize="18" Width="300" Height="30" BorderBrush="#FF9D9BFF"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
             <Button Content="Войти" FontSize="20" Click="ButtonAuth" Height="40" Width="80" Margin="5" 
-                    Foreground="White" Background="#FF6C63FF"/>
+                    Foreground="White" Background="#FF9D9BFF"/>
             <Button Content="Регистрация" FontSize="20" Click="ButtonAuthReg" Height="40" Width="140" 
-                    Background="#FF36D1DC" Foreground="White" Margin="5"/>
+                    Background="#4c87d9" Foreground="White" Margin="5"/>
         </StackPanel>
     </StackPanel>
 </Window>

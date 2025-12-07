@@ -24,7 +24,7 @@
         </ListBox>
         <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
             <Button Content="Вернуться к решению заданий" FontSize="20" Click="ButtonCanseltoMain" 
-                    Height="50" Width="320" Background="#4DB6AC" Foreground="Beige"/>
+                    Height="50" Width="320" Background="#acacac" Foreground="Beige"/>
         </StackPanel>
     </StackPanel>
 </Window>
