@@ -8,9 +8,6 @@ namespace ege_math_trainer.Windows
     {
         private AppContext _context;
         public User currentUser;
-        public int currentSecondPartTaskId; //Id текущего задания
-        public int currentTaskPart = 2; //2 часть
-        public int currenttaskId; //Id текущего номера задания
         public PartTwoTask currentTask; //текущее задание
         public SecondPartTasksWindow(int taskId, User user)
         {
@@ -22,16 +19,13 @@ namespace ege_math_trainer.Windows
 
             currentUser = _context.Users.FirstOrDefault(q => q.Id == user.Id);
 
-            currenttaskId = taskId;
-
             currentTask = _context.PartTwoTasks.FirstOrDefault(q => q.TaskId == taskId && !q.Users.Any(u => u.Id == currentUser.Id));
             if (currentTask != null)
             {
-                currentSecondPartTaskId = currentTask.Id;
                 TextBlockConditionSecondPartTask.Text = currentTask.Condition;
                 if (!string.IsNullOrEmpty(currentTask.ConditionImage))
                 {
-                    ImageConditionSecondPartTask.Source = new BitmapImage(new Uri(currentTask.ConditionImage, UriKind.Relative));
+                    ImageConditionSecondPartTask.Source = new BitmapImage(new Uri(currentTask.ConditionImage, UriKind.RelativeOrAbsolute));
                     //BitmapImage - класс WPF для работы с изображениями (принимает Uri и загружает изображение по этому пути)
                     //Uri - адрес; UriKind.Relative - относительный путь (не полный); UriKind.Absolute - абсолютный адрес
                 }
@@ -46,7 +40,7 @@ namespace ege_math_trainer.Windows
                 {
                     List<PartTwoTask> completedTasks = new();
 
-                    completedTasks.Add(_context.PartTwoTasks.FirstOrDefault(q => q.TaskId == currenttaskId));
+                    completedTasks.Add(_context.PartTwoTasks.FirstOrDefault(q => q.TaskId == currentTask.TaskId));
 
                     foreach (PartTwoTask task in completedTasks)
                     {
@@ -99,19 +93,19 @@ namespace ege_math_trainer.Windows
 
         private void ButtonSecondPartTasksDecision(object sender, RoutedEventArgs e)
         {
-            DecisionTaskWindow decisionTaskWindow = new DecisionTaskWindow(currentSecondPartTaskId, currentTaskPart);
+            DecisionTaskWindow decisionTaskWindow = new DecisionTaskWindow(currentTask.Id, currentTask.TaskId);
             decisionTaskWindow.ShowDialog();
         }
 
         private void ButtonSecondPartTasksCriteria(object sender, RoutedEventArgs e)
         {
-            TaskEvaluationCriteriaWindow taskEvaluationCriteriaWindow = new TaskEvaluationCriteriaWindow(currentSecondPartTaskId, currentTaskPart);
+            TaskEvaluationCriteriaWindow taskEvaluationCriteriaWindow = new TaskEvaluationCriteriaWindow(currentTask, currentTask.TaskId);
             taskEvaluationCriteriaWindow.ShowDialog();
         }
 
         private void ButtonSecondPartTasksNextTask(object sender, RoutedEventArgs e)
         {
-            SecondPartTasksWindow nextSecondPartTasksWindow = new SecondPartTasksWindow(currenttaskId, currentUser);
+            SecondPartTasksWindow nextSecondPartTasksWindow = new SecondPartTasksWindow(currentTask.TaskId, currentUser);
             nextSecondPartTasksWindow.Show();
             this.Close();
         }

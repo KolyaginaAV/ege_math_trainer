@@ -21,7 +21,9 @@ namespace ege_math_trainer.Windows
 
         private void ButtonCanseltoMain(object sender, RoutedEventArgs e)
         {
-            DialogResult = true;
+            MainWindow mainWindow = new MainWindow(currentUser);
+            mainWindow.Show();
+            this.Close();
         }
 
         private void ButtonMaiAddTask(object sender, RoutedEventArgs e)

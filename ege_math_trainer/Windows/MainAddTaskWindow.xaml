@@ -8,7 +8,7 @@
         Title="MainAddTaskWindow" Height="610" Width="700">
     <StackPanel>
         <TextBlock Text="Выбор задания для добавления" FontSize="30" HorizontalAlignment="Center"/>
-        <TextBlock Name="TextBlockWelcome" FontSize="15" Foreground="Gray" Margin="15 10 0 10"/>
+        <TextBlock Text="Нажмите на задание, пример которого хотите добавить" FontSize="15" Foreground="Gray" Margin="15 10 0 10"/>
         <ListBox Margin="5" Name="ListBoxTasks" FontSize="14" Height="400">
             <ListBox.ItemTemplate>
                 <DataTemplate>

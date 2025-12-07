@@ -1,5 +1,8 @@
-﻿using System.Windows;
+﻿using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Media.Imaging;
 using ege_math_trainer.Models;
+using Microsoft.Win32;
 
 
 namespace ege_math_trainer.Windows
@@ -8,6 +11,8 @@ namespace ege_math_trainer.Windows
     {
         private AppContext _context;
         public int currentTaskId;
+        public string AddImageCondition;
+        public string AddImageDecision;
         public AddTaskWindow(int taskId)
         {
             InitializeComponent();
@@ -42,17 +47,18 @@ namespace ege_math_trainer.Windows
                     PartOneTask? provPartOneTask = _context.PartOneTasks.FirstOrDefault(q => q.Condition == BoxAddTaskCondition.Text);
                     if (provPartOneTask == null)
                     {
-                        if (!string.IsNullOrEmpty(BoxAddTaskImageCondition.Text))
+                        if (!string.IsNullOrEmpty(AddImageCondition))
                         {
-                            if (!string.IsNullOrEmpty(BoxAddTaskImageDecision.Text))
+                            if (!string.IsNullOrEmpty(AddImageDecision))
                             {
                                 PartOneTask newPartOneTask = new PartOneTask
                                 {
                                     Condition = BoxAddTaskCondition.Text,
                                     Decision = BoxAddTaskDecision.Text,
-                                    ConditionImage = BoxAddTaskImageCondition.Text,
-                                    DecisionImagePath = BoxAddTaskImageDecision.Text,
-                                    RightAnswer = BoxAddTaskRightAnswer.Text
+                                    ConditionImage = AddImageCondition,
+                                    DecisionImagePath = AddImageDecision,
+                                    RightAnswer = BoxAddTaskRightAnswer.Text,
+                                    TaskId = currentTaskId
                                 };
 
                                 _context.PartOneTasks.Add(newPartOneTask);
@@ -66,8 +72,9 @@ namespace ege_math_trainer.Windows
                                 {
                                     Condition = BoxAddTaskCondition.Text,
                                     Decision = BoxAddTaskDecision.Text,
-                                    ConditionImage = BoxAddTaskImageCondition.Text,
-                                    RightAnswer = BoxAddTaskRightAnswer.Text
+                                    ConditionImage = AddImageCondition,
+                                    RightAnswer = BoxAddTaskRightAnswer.Text,
+                                    TaskId = currentTaskId
                                 };
 
                                 _context.PartOneTasks.Add(newPartOneTask);
@@ -78,14 +85,15 @@ namespace ege_math_trainer.Windows
                         }
                         else
                         {
-                            if (!string.IsNullOrEmpty(BoxAddTaskImageDecision.Text))
+                            if (!string.IsNullOrEmpty(AddImageDecision))
                             {
                                 PartOneTask newPartOneTask = new PartOneTask
                                 {
                                     Condition = BoxAddTaskCondition.Text,
                                     Decision = BoxAddTaskDecision.Text,
-                                    DecisionImagePath = BoxAddTaskImageDecision.Text,
-                                    RightAnswer = BoxAddTaskRightAnswer.Text
+                                    DecisionImagePath = AddImageDecision,
+                                    RightAnswer = BoxAddTaskRightAnswer.Text,
+                                    TaskId = currentTaskId
                                 };
 
                                 _context.PartOneTasks.Add(newPartOneTask);
@@ -99,7 +107,8 @@ namespace ege_math_trainer.Windows
                                 {
                                     Condition = BoxAddTaskCondition.Text,
                                     Decision = BoxAddTaskDecision.Text,
-                                    RightAnswer = BoxAddTaskRightAnswer.Text
+                                    RightAnswer = BoxAddTaskRightAnswer.Text,
+                                    TaskId = currentTaskId
                                 };
 
                                 _context.PartOneTasks.Add(newPartOneTask);
@@ -116,7 +125,7 @@ namespace ege_math_trainer.Windows
                 }
                 else
                 {
-                    MessageBox.Show("Не все поля заполнены.");
+                    MessageBox.Show("Заполните обязательные поля: 'Условие', 'Решение', 'Правильный ответ'.");
                 }
             }
             else
@@ -126,19 +135,21 @@ namespace ege_math_trainer.Windows
                     PartTwoTask? provPartTwoTask = _context.PartTwoTasks.FirstOrDefault(q => q.Condition == BoxAddTaskCondition.Text);
                     if (provPartTwoTask == null)
                     {
-                        if (!string.IsNullOrEmpty(BoxAddTaskImageCondition.Text))
+                        if (!string.IsNullOrEmpty(AddImageCondition))
                         {
                             if (!string.IsNullOrEmpty(BoxAddTaskDecision.Text))
                             {
-                                if (!string.IsNullOrEmpty(BoxAddTaskImageDecision.Text))
+                                if (!string.IsNullOrEmpty(AddImageDecision))
                                 {
                                     PartTwoTask newPartTwoTask = new PartTwoTask
                                     {
                                         Condition = BoxAddTaskCondition.Text,
                                         Decision = BoxAddTaskDecision.Text,
-                                        ConditionImage = BoxAddTaskImageCondition.Text,
-                                        DecisionImagePath = BoxAddTaskImageDecision.Text,
-                                        IndEvaluationCriteria = BoxAddTaskImageDecision.Text
+                                        ConditionImage = AddImageCondition,
+                                        DecisionImagePath = AddImageDecision,
+                                        IndEvaluationCriteria = BoxAddTaskIndCriteria.Text,
+                                        TaskId = currentTaskId,
+                                        CriteriaId = currentTaskId
                                     };
                                     _context.PartTwoTasks.Add(newPartTwoTask);
                                     _context.SaveChanges();
@@ -151,8 +162,10 @@ namespace ege_math_trainer.Windows
                                     {
                                         Condition = BoxAddTaskCondition.Text,
                                         Decision = BoxAddTaskDecision.Text,
-                                        ConditionImage = BoxAddTaskImageCondition.Text,
-                                        IndEvaluationCriteria = BoxAddTaskImageDecision.Text
+                                        ConditionImage = AddImageCondition,
+                                        IndEvaluationCriteria = BoxAddTaskIndCriteria.Text,
+                                        TaskId = currentTaskId,
+                                        CriteriaId = currentTaskId
                                     };
                                     _context.PartTwoTasks.Add(newPartTwoTask);
                                     _context.SaveChanges();
@@ -162,14 +175,16 @@ namespace ege_math_trainer.Windows
                             }
                             else
                             {
-                                if (!string.IsNullOrEmpty(BoxAddTaskImageDecision.Text))
+                                if (!string.IsNullOrEmpty(AddImageDecision))
                                 {
                                     PartTwoTask newPartTwoTask = new PartTwoTask
                                     {
                                         Condition = BoxAddTaskCondition.Text,
-                                        ConditionImage = BoxAddTaskImageCondition.Text,
-                                        DecisionImagePath = BoxAddTaskImageDecision.Text,
-                                        IndEvaluationCriteria = BoxAddTaskImageDecision.Text
+                                        ConditionImage = AddImageCondition,
+                                        DecisionImagePath = AddImageDecision,
+                                        IndEvaluationCriteria = BoxAddTaskIndCriteria.Text,
+                                        TaskId = currentTaskId,
+                                        CriteriaId = currentTaskId
                                     };
                                     _context.PartTwoTasks.Add(newPartTwoTask);
                                     _context.SaveChanges();
@@ -181,8 +196,10 @@ namespace ege_math_trainer.Windows
                                     PartTwoTask newPartTwoTask = new PartTwoTask
                                     {
                                         Condition = BoxAddTaskCondition.Text,
-                                        ConditionImage = BoxAddTaskImageCondition.Text,
-                                        IndEvaluationCriteria = BoxAddTaskImageDecision.Text
+                                        ConditionImage = AddImageCondition,
+                                        IndEvaluationCriteria = BoxAddTaskIndCriteria.Text,
+                                        TaskId = currentTaskId,
+                                        CriteriaId = currentTaskId
                                     };
                                     _context.PartTwoTasks.Add(newPartTwoTask);
                                     _context.SaveChanges();
@@ -195,14 +212,16 @@ namespace ege_math_trainer.Windows
                         {
                             if (!string.IsNullOrEmpty(BoxAddTaskDecision.Text))
                             {
-                                if (!string.IsNullOrEmpty(BoxAddTaskImageDecision.Text))
+                                if (!string.IsNullOrEmpty(AddImageDecision))
                                 {
                                     PartTwoTask newPartTwoTask = new PartTwoTask
                                     {
                                         Condition = BoxAddTaskCondition.Text,
                                         Decision = BoxAddTaskDecision.Text,
-                                        DecisionImagePath = BoxAddTaskImageDecision.Text,
-                                        IndEvaluationCriteria = BoxAddTaskImageDecision.Text
+                                        DecisionImagePath = AddImageDecision,
+                                        IndEvaluationCriteria = BoxAddTaskIndCriteria.Text,
+                                        TaskId = currentTaskId,
+                                        CriteriaId = currentTaskId
                                     };
                                     _context.PartTwoTasks.Add(newPartTwoTask);
                                     _context.SaveChanges();
@@ -215,7 +234,9 @@ namespace ege_math_trainer.Windows
                                     {
                                         Condition = BoxAddTaskCondition.Text,
                                         Decision = BoxAddTaskDecision.Text,
-                                        IndEvaluationCriteria = BoxAddTaskImageDecision.Text
+                                        IndEvaluationCriteria = BoxAddTaskIndCriteria.Text,
+                                        TaskId = currentTaskId,
+                                        CriteriaId = currentTaskId
                                     };
                                     _context.PartTwoTasks.Add(newPartTwoTask);
                                     _context.SaveChanges();
@@ -225,13 +246,15 @@ namespace ege_math_trainer.Windows
                             }
                             else
                             {
-                                if (!string.IsNullOrEmpty(BoxAddTaskImageDecision.Text))
+                                if (!string.IsNullOrEmpty(AddImageDecision))
                                 {
                                     PartTwoTask newPartTwoTask = new PartTwoTask
                                     {
                                         Condition = BoxAddTaskCondition.Text,
-                                        DecisionImagePath = BoxAddTaskImageDecision.Text,
-                                        IndEvaluationCriteria = BoxAddTaskImageDecision.Text
+                                        DecisionImagePath = AddImageDecision,
+                                        IndEvaluationCriteria = BoxAddTaskIndCriteria.Text,
+                                        TaskId = currentTaskId,
+                                        CriteriaId = currentTaskId
                                     };
                                     _context.PartTwoTasks.Add(newPartTwoTask);
                                     _context.SaveChanges();
@@ -243,7 +266,9 @@ namespace ege_math_trainer.Windows
                                     PartTwoTask newPartTwoTask = new PartTwoTask
                                     {
                                         Condition = BoxAddTaskCondition.Text,
-                                        IndEvaluationCriteria = BoxAddTaskImageDecision.Text
+                                        IndEvaluationCriteria = BoxAddTaskIndCriteria.Text,
+                                        TaskId = currentTaskId,
+                                        CriteriaId = currentTaskId
                                     };
                                     _context.PartTwoTasks.Add(newPartTwoTask);
                                     _context.SaveChanges();
@@ -260,8 +285,44 @@ namespace ege_math_trainer.Windows
                 }
                 else
                 {
-                    MessageBox.Show("Не все поля заполнены.");
+                    MessageBox.Show("Заполните обязательные поля: 'Условие', 'Индивидуальные критерии'.");
                 }
+            }
+        }
+
+        private void ButtonAddConditionImage(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Images (*.jpg, *.jpeg, *.png)|*.jpg;*.jpeg;*.png", //что видит пользователь|фильтр для системы
+                Title = "Выберите картинку для условия",
+                Multiselect = false //можно выбрать только 1 файл
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                AddImageCondition = openFileDialog.FileName;
+                ImageCondition.Source = new BitmapImage(new Uri(AddImageCondition, UriKind.RelativeOrAbsolute));
+                //BitmapImage - класс WPF для работы с изображениями (принимает Uri и загружает изображение по этому пути)
+                //Uri - адрес; UriKind.Relative - относительный путь (не полный); UriKind.Absolute - абсолютный адрес
+            }
+        }
+
+        private void ButtonAddDecisionImage(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Images (*.jpg, *.jpeg, *.png)|*.jpg;*.jpeg;*.png", //что видит пользователь|фильтр для системы
+                Title = "Выберите картинку для решения",
+                Multiselect = false //можно выбрать только 1 файл
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                AddImageDecision = openFileDialog.FileName;
+                ImageDecision.Source = new BitmapImage(new Uri(AddImageDecision, UriKind.RelativeOrAbsolute));
+                //BitmapImage - класс WPF для работы с изображениями (принимает Uri и загружает изображение по этому пути)
+                //Uri - адрес; UriKind.Relative - относительный путь (не полный); UriKind.Absolute - абсолютный адрес
             }
         }
     }

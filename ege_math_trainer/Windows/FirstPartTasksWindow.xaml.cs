@@ -1,9 +1,7 @@
-﻿using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using ege_math_trainer.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace ege_math_trainer.Windows
 {
@@ -11,30 +9,28 @@ namespace ege_math_trainer.Windows
     {
         private AppContext _context;
         public User currentUser;
-        public int currentTaskFirstPartId; //Id текущего задания
-        public int currentTaskPart = 1; //1 часть
-        public int currenttaskId; //Id текущего номера задания
         public PartOneTask currentTask; //текущее задание
         public FirstPartTasksWindow(int taskId, User user)
         {
             InitializeComponent();
 
             _context = new AppContext();
+            currentUser = _context.Users.FirstOrDefault(u => u.Id == user.Id);
 
             FirstPartTaskTitle.Text = _context.Tasks.FirstOrDefault(q => q.Id == taskId).ToString();
 
-            currentUser = _context.Users.FirstOrDefault(u => u.Id == user.Id); 
+            
+            List<PartOneTask> allTasksForThisId = _context.PartOneTasks.Where(q => q.TaskId == taskId).ToList();
+            List<PartOneTask> unsolvedTasks = allTasksForThisId.Where(q => !q.Users.Any(u => u.Id == currentUser.Id)).ToList();
 
-            currenttaskId = taskId;
-
-            currentTask = _context.PartOneTasks.FirstOrDefault(q => q.TaskId == taskId && !q.Users.Any(u => u.Id == currentUser.Id));
-            if (currentTask != null)
+            if (unsolvedTasks.Any())
             {
-                currentTaskFirstPartId = currentTask.Id;
+                // Берем ПЕРВОЕ из нерешенных заданий
+                currentTask = unsolvedTasks.First();
                 TextBlockConditionFirstPartTask.Text = currentTask.Condition;
                 if (!string.IsNullOrEmpty(currentTask.ConditionImage))
                 {
-                    ImageConditionFirstPartTask.Source = new BitmapImage(new Uri(currentTask.ConditionImage, UriKind.Relative));
+                    ImageConditionFirstPartTask.Source = new BitmapImage(new Uri(currentTask.ConditionImage, UriKind.RelativeOrAbsolute));
                     //BitmapImage - класс WPF для работы с изображениями (принимает Uri и загружает изображение по этому пути)
                     //Uri - адрес; UriKind.Relative - относительный путь (не полный); UriKind.Absolute - абсолютный адрес
                 }
@@ -49,7 +45,7 @@ namespace ege_math_trainer.Windows
                 {
                     List<PartOneTask> completedTasks = new();
 
-                    completedTasks.Add(_context.PartOneTasks.FirstOrDefault(q => q.TaskId == currenttaskId));
+                    completedTasks.Add(_context.PartOneTasks.FirstOrDefault(q => q.TaskId == currentTask.TaskId));
 
                     foreach (PartOneTask task in completedTasks)
                     {
@@ -58,16 +54,51 @@ namespace ege_math_trainer.Windows
 
                     _context.SaveChanges();
 
-                    FirstPartTasksWindow newWindow = new FirstPartTasksWindow(currenttaskId, currentUser);
+                    FirstPartTasksWindow newWindow = new FirstPartTasksWindow(currentTask.TaskId, currentUser);
                     newWindow.Show();
                     this.Close();
                 }
             }
-        }
+                //currentTask = _context.PartOneTasks.FirstOrDefault(q => q.TaskId == taskId && !q.Users.Any(u => u.Id == currentUser.Id));
+                //if (currentTask != null)
+                //{
+                //    TextBlockConditionFirstPartTask.Text = currentTask.Condition;
+                //    if (!string.IsNullOrEmpty(currentTask.ConditionImage))
+                //    {
+                //        ImageConditionFirstPartTask.Source = new BitmapImage(new Uri(currentTask.ConditionImage, UriKind.RelativeOrAbsolute));
+                //        //BitmapImage - класс WPF для работы с изображениями (принимает Uri и загружает изображение по этому пути)
+                //        //Uri - адрес; UriKind.Relative - относительный путь (не полный); UriKind.Absolute - абсолютный адрес
+                //    }
+                //    currentTask.Users.Add(currentUser);
+                //    _context.SaveChanges();
+                //}
+                //else
+                //{
+                //    MessageBoxResult result = MessageBox.Show("Вы уже решили все задания этого номера, хотите прорешать их снова?",
+                //        "Сообщение", MessageBoxButton.YesNo);
+                //    if (result == MessageBoxResult.Yes)
+                //    {
+                //        List<PartOneTask> completedTasks = new();
+
+                //        completedTasks.Add(_context.PartOneTasks.FirstOrDefault(q => q.TaskId == currentTask.TaskId));
+
+                //        foreach (PartOneTask task in completedTasks)
+                //        {
+                //            task.Users.Remove(currentUser);
+                //        }
+
+                //        _context.SaveChanges();
+
+                //        FirstPartTasksWindow newWindow = new FirstPartTasksWindow(currentTask.TaskId, currentUser);
+                //        newWindow.Show();
+                //        this.Close();
+                //    }
+                //}
+            }
 
         private void ButtonFirstPartTasksDecision(object sender, RoutedEventArgs e)
         {
-            DecisionTaskWindow decisionTaskWindow = new DecisionTaskWindow(currentTaskFirstPartId, currentTaskPart);
+            DecisionTaskWindow decisionTaskWindow = new DecisionTaskWindow(currentTask.Id, currentTask.TaskId);
             decisionTaskWindow.ShowDialog();
         }
 
@@ -103,7 +134,7 @@ namespace ege_math_trainer.Windows
 
         private void ButtonFirstPartTasksNextTask(object sender, RoutedEventArgs e)
         {
-            FirstPartTasksWindow nextFirstPartTasksWindow = new FirstPartTasksWindow(currenttaskId, currentUser);
+            FirstPartTasksWindow nextFirstPartTasksWindow = new FirstPartTasksWindow(currentTask.TaskId, currentUser);
             nextFirstPartTasksWindow.Show();
             this.Close();
         }
@@ -131,3 +162,4 @@ namespace ege_math_trainer.Windows
         }
     }
 }
+

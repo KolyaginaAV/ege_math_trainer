@@ -7,23 +7,22 @@ namespace ege_math_trainer.Windows
     public partial class TaskEvaluationCriteriaWindow : Window
     {
         private AppContext _context;
-        public TaskEvaluationCriteriaWindow(int currentTaskId, int currentTaskPart)
+        public TaskEvaluationCriteriaWindow(PartTwoTask currentTask, int currentNumberTaskId)
         {
             InitializeComponent();
 
             _context = new AppContext();
 
+            NameCriteriaTask.Text = _context.Tasks.FirstOrDefault(q => q.Id == currentNumberTaskId).ToString();
 
-            PartTwoTask currentTask = _context.PartTwoTasks.FirstOrDefault(q => q.Id == currentTaskId);
+            Criteria criteria = _context.Criterias.FirstOrDefault(q => q.Id == currentNumberTaskId);
 
-            int number = currentTask.TaskId;
-            NameCriteriaTask.Text = _context.Tasks.FirstOrDefault(q => q.Id == number).ToString();
-
-            Criteria criteria = _context.Criterias.FirstOrDefault(q => q.Id == number);
             TextBlockCriteria.Text = criteria.EvaluationCriteria;
 
             TextBlockIndCriteria.Text = currentTask.IndEvaluationCriteria;
-            ImageCriteria.Source = new BitmapImage(new Uri(criteria.ImageEvaluationCriteriaPath, UriKind.Relative));
+            ImageCriteria.Source = new BitmapImage(new Uri(criteria.ImageEvaluationCriteriaPath, UriKind.RelativeOrAbsolute));
+            //BitmapImage - класс WPF для работы с изображениями (принимает Uri и загружает изображение по этому пути)
+            //Uri - адрес; UriKind.Relative - относительный путь (не полный); UriKind.Absolute - абсолютный адрес
         }
 
         private void ButtonDecisionCansel(object sender, RoutedEventArgs e)

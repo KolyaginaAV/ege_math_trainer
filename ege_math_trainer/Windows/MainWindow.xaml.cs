@@ -22,7 +22,7 @@ namespace ege_math_trainer
 
             if (user.RoleId == 1) 
             {
-                TextBlockWelcome.Text = "Выберите задание, которое хотите порешать\nИли сделав двойной клик по заданию, добавьте новый пример этого задания";
+                TextBlockWelcome.Text = "Выберите задание, которое хотите порешать\nИли нажмите на кнопку для добавления задания";
                 TextUserName.Text = user.Name + " " + user.Patronymic + "!";
                 ButtonNameMainAddTask.Visibility = Visibility.Visible;
             }
@@ -62,7 +62,8 @@ namespace ege_math_trainer
         private void ButtonMainAddTask(object sender, RoutedEventArgs e)
         {
             MainAddTaskWindow mainAddTaskWindow = new MainAddTaskWindow(currentUser);
-            mainAddTaskWindow.ShowDialog();
+            mainAddTaskWindow.Show();
+            this.Close();
         }
     }
 }
