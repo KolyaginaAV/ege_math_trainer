@@ -9,27 +9,27 @@
     <StackPanel>
         <TextBlock Name="SecondPartTaskTitle" TextWrapping = "Wrap" FontSize="30" HorizontalAlignment="Center" FontWeight="Bold" Foreground="#FF6C63FF"/>
         <StackPanel Margin="10 5 5 5">
-            <TextBlock Text="Условие" Foreground="#FF333333" FontWeight="SemiBold" FontSize="22"/>
+            <TextBlock Text="Условие" Foreground="#7366BD" FontWeight="SemiBold" FontSize="22"/>
             <TextBlock Name="TextBlockConditionSecondPartTask" TextWrapping = "Wrap" FontSize="18" Margin="0 3 0 0"/>
-            <Image Name ="ImageConditionSecondPartTask" MaxHeight="200" MaxWidth="200"/>
+            <Image Name ="ImageConditionSecondPartTask" MaxHeight="200" MaxWidth="200" Margin="0 10 0 0"/>
         </StackPanel>
         <StackPanel Margin="10 7 7 7">
-            <TextBlock Text="Для записей (решения)" Foreground="#FF333333" FontWeight="SemiBold" FontSize="22"/>
+            <TextBlock Text="Для записей (решения)" Foreground="#7366BD" FontWeight="SemiBold" FontSize="22"/>
             <TextBox FontSize="18" Height="60" TextWrapping = "Wrap" Width="670" Margin="0 5 0 0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="7">
             <Button Content="Посмотреть решение" Click="ButtonSecondPartTasksDecision" 
-                    Foreground="Honeydew" Background="RosyBrown" FontSize="18" Width="200" Height="40"/>
+                    Foreground="Honeydew" Background="#FF9D9BFF" FontSize="18" Width="200" Height="40"/>
             <Button Content="Проверить себя по критериям" Click="ButtonSecondPartTasksCriteria" 
-                    Foreground="Honeydew" Background="RosyBrown" FontSize="18"  Width="280" Height="40" Margin="5 0 0 0"/>
+                    Foreground="Honeydew" Background="#FF9D9BFF" FontSize="18"  Width="280" Height="40" Margin="5 0 0 0"/>
         </StackPanel>
-        <Button Content="К следующему заданию" Background="#B39DDB" Foreground="LightCyan" FontSize="18"  Width="220" Height="40"
+        <Button Content="К следующему заданию" Background="#C5A6FF" Foreground="White" FontSize="18"  Width="220" Height="40"
                 Click="ButtonSecondPartTasksNextTask"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="7">
             <Button Content="Выход" Click="ButtonSecondPartTasksCansel" FontSize="18" Width="100" Height="40"
-                    Background="#acacac" Foreground="Beige"/>
+                    Background="#C0C0C0" Foreground="Beige"/>
             <Button Content="Вернуться к выбору задания" Click="ButtonSecondPartTasksCanselToMain" FontSize="18" 
-                    Background="#acacac" Foreground="Beige" Width="255" Height="40" Margin="5 0 0 0"/>
+                    Background="#C0C0C0" Foreground="Beige" Width="255" Height="40" Margin="5 0 0 0"/>
         </StackPanel>
     </StackPanel>
 </Window>

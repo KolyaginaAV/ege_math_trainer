@@ -16,7 +16,7 @@
                 BorderBrush="#FFD1C4E9" BorderThickness="1">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Button BorderBrush="DarkViolet" Background="#FF9D9BFF"
+                    <Button BorderBrush="#e4b3e4" Background="#FF9D9BFF"
                     BorderThickness="1" Foreground="Lavender" Width="640" Height="50"
                     Margin="2" Content="{Binding Name}" FontSize="18"
                     Click="ButtonMainTask" Tag="{Binding Id}"/>
@@ -25,10 +25,10 @@
         </ListBox>
         <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
             <Button Content="Добавить задания"  FontSize="20" Name="ButtonNameMainAddTask"
-                    Click="ButtonMainAddTask" Background="PaleGreen" 
+                    Click="ButtonMainAddTask" Background="#C5A6FF" 
                     Foreground="Beige" Width="200" Height="50" Margin="2 2 2 15"/>
             <Button Content="Выйти из аккаунта" FontSize="20" Click="ButtonCanselMain" Height="50" Width="200" 
-                    Background="#acacac" Foreground="Beige"  Margin="10 2 2 15"/>
+                    Background="#C0C0C0" Foreground="Beige"  Margin="10 2 2 15"/>
         </StackPanel>
     </StackPanel>
 </Window>

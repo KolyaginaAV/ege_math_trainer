@@ -103,21 +103,25 @@ namespace ege_math_trainer.Windows
         {
             if (!string.IsNullOrEmpty(BoxTaskAnswer.Text))
             {
-                if (BoxTaskAnswer.Text == currentTask.RightAnswer)
+                string userAnswer = BoxTaskAnswer.Text.Trim().Replace(',', '.'); //Trim() - удаление пробелов; Replace - заменяет все , на .
+
+                if (userAnswer == currentTask.RightAnswer)
                 {
                     BoxTaskAnswer.Foreground = new SolidColorBrush(Colors.DarkGreen);
                     BoxTaskAnswer.Background = new SolidColorBrush(Colors.LightGreen);
+                    MessageBox.Show("Ответ верный!\nМолодец!", "Ура!");
                 }
                 else
                 {
                     BoxTaskAnswer.Foreground = new SolidColorBrush(Colors.DarkRed);
                     BoxTaskAnswer.Background = new SolidColorBrush(Colors.LightPink);
+                    MessageBox.Show("Ответ неверный.\nПопробуй ещё раз!", "Эх");
                 }
             }
             else
             {
                 MessageBox.Show("Введите ответ в поле, чтобы проверить его.");
-                BoxTaskAnswer.Background = new SolidColorBrush(Colors.LightPink);
+                BoxTaskAnswer.Background = new SolidColorBrush(Colors.Wheat);
             }
         }
     }

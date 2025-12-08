@@ -11,52 +11,52 @@
         <TextBlock Text="Регистрация" FontSize="30" HorizontalAlignment="Center" Margin="5" FontWeight="Bold" 
                    Foreground="#FF6C63FF"/>
         <StackPanel Margin="10 5 10 5">
-            <Label Content="Логин" FontSize="20" FontWeight="SemiBold" Foreground="#4b63cc"/>
+            <Label Content="Логин" FontSize="20" FontWeight="SemiBold" Foreground="#7366BD"/>
             <TextBox Name="BoxRegLogin" FontSize="18" Width="490" Height="25" VerticalContentAlignment ="Center" 
                      HorizontalAlignment="Left" BorderBrush="#FFD1C4E9"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="10 5 10 5">
-            <Label Content="Пароль" FontSize="20" FontWeight="SemiBold" Foreground="#4b63cc"/>
+            <Label Content="Пароль" FontSize="20" FontWeight="SemiBold" Foreground="#7366BD"/>
             <TextBox Name="BoxRegPassword" FontSize="18" Width="490" Height="25" VerticalContentAlignment ="Center" 
                      HorizontalAlignment="Left" BorderBrush="#FFD1C4E9"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="10 5 10 5">
-            <Label Content="Фамилия" FontSize="20" FontWeight="SemiBold" Foreground="#4b63cc"/>
+            <Label Content="Фамилия" FontSize="20" FontWeight="SemiBold" Foreground="#7366BD"/>
             <TextBox Name="BoxRegSurname" FontSize="18" Width="490" Height="25" VerticalContentAlignment ="Center" 
                      HorizontalAlignment="Left" BorderBrush="#FFD1C4E9"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="10 5 10 5">
-            <Label Content="Имя" FontSize="20" FontWeight="SemiBold" Foreground="#4b63cc"/>
+            <Label Content="Имя" FontSize="20" FontWeight="SemiBold" Foreground="#7366BD"/>
             <TextBox Name="BoxRegName" FontSize="18" Height="25" Width="490" VerticalContentAlignment ="Center" 
                      HorizontalAlignment="Left" BorderBrush="#FFD1C4E9"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="10 5 10 5">
-            <Label Content="Отчество" FontSize="20" FontWeight="SemiBold" Foreground="#4b63cc"/>
+            <Label Content="Отчество" FontSize="20" FontWeight="SemiBold" Foreground="#7366BD"/>
             <TextBox Name="BoxRegPatronymic" FontSize="18" Width="490" Height="25" VerticalContentAlignment ="Center" 
                      HorizontalAlignment="Left" BorderBrush="#FFD1C4E9"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="10 5 10 5">
-            <Label Content="Номер телефона" FontSize="20" FontWeight="SemiBold" Foreground="#4b63cc"/>
+            <Label Content="Номер телефона" FontSize="20" FontWeight="SemiBold" Foreground="#7366BD"/>
             <TextBox Name="BoxRegPhone" FontSize="18" Height="25" Width="490" VerticalContentAlignment ="Center" 
                      HorizontalAlignment="Left" BorderBrush="#FFD1C4E9"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="10 5 10 5">
-            <Label Content="Почта" FontSize="20" FontWeight="SemiBold" Foreground="#4b63cc"/>
+            <Label Content="Почта" FontSize="20" FontWeight="SemiBold" Foreground="#7366BD"/>
             <TextBox Name="BoxRegEmail" FontSize="18" Width="490" Height="25" VerticalContentAlignment ="Center" 
                      HorizontalAlignment="Left" BorderBrush="#FFD1C4E9"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="10 5 10 5">
-            <Label Content="Роль" FontSize="20" FontWeight="SemiBold" Foreground="#4b63cc"/>
+            <Label Content="Роль" FontSize="20" FontWeight="SemiBold" Foreground="#7366BD"/>
             <StackPanel Margin="15 0 0 0">
-                <RadioButton Name ="RadioButtonTeacher" GroupName="Role" Content="Учитель" FontSize="20" Foreground="#4b63cc"/>
-                <RadioButton Name ="RadioButtonStudent" GroupName="Role" IsChecked="True" Content="Ученик" FontSize="20" Foreground="#4b63cc"/>
+                <RadioButton Name ="RadioButtonTeacher" GroupName="Role" Content="Учитель" FontSize="20" Foreground="#7366BD"/>
+                <RadioButton Name ="RadioButtonStudent" GroupName="Role" IsChecked="True" Content="Ученик" FontSize="20" Foreground="#7366BD"/>
             </StackPanel>
         </StackPanel>
-        <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Content="Зарегистрироваться" FontSize="25" Click="ButtonReg" Width="250" Height="50" 
+        <StackPanel Margin="5 5 5 10" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Зарегистрироваться" FontSize="20" Click="ButtonReg" Width="250" Height="40" 
                     Margin="5" Background="#FF9D9BFF" Foreground="Beige"/>
-            <Button Content="Отмена" FontSize="25" Click="ButtonRegCancel" Width="130" Margin="5"
-                    Background="#acacac" Foreground="Beige"/>
+            <Button Content="Отмена" FontSize="20" Click="ButtonRegCancel" Width="130" Margin="5"
+                    Background="#C0C0C0" Foreground="Beige"/>
         </StackPanel>
     </StackPanel>
 </Window>

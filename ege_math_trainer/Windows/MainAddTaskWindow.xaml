@@ -15,7 +15,7 @@
                  Background="#FFF0F0FF" BorderBrush="#FFD1C4E9" BorderThickness="1">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Button BorderBrush="Purple" Background="#FF9D9BFF"
+                    <Button BorderBrush="Pink" Background="#FF9D9BFF"
                         BorderThickness="1" Foreground="Lavender" Width="640" Height="50"
                         Margin="2" Content="{Binding Name}" FontSize="18"
                         Click="ButtonMaiAddTask" Tag="{Binding Id}"/>
@@ -24,7 +24,7 @@
         </ListBox>
         <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
             <Button Content="Вернуться к решению заданий" FontSize="20" Click="ButtonCanseltoMain" 
-                    Height="50" Width="320" Background="#acacac" Foreground="Beige"/>
+                    Height="50" Width="320" Background="#C0C0C0" Foreground="Beige"/>
         </StackPanel>
     </StackPanel>
 </Window>

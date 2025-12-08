@@ -13,41 +13,41 @@
         <TextBlock Name="NameTaskAdd" FontSize="30" HorizontalAlignment="Center" Margin="20 5 20 5" Foreground="#FF6C63FF"
                       FontWeight="Bold"/>
         <StackPanel Margin="10 5 10 5">
-            <TextBlock Text="Условие" FontSize="20" Foreground="#4b63cc" FontWeight="SemiBold"/>
+            <TextBlock Text="Условие" FontSize="20" Foreground="#7366BD" FontWeight="SemiBold"/>
             <TextBox Name="BoxAddTaskCondition" TextWrapping="Wrap" FontSize="15" 
                      Margin="0 3 0 0" BorderBrush="#FFD1C4E9"/>
         </StackPanel>
         <StackPanel Margin="10 5 10 5" >
-            <TextBlock Text="Картинка к условию" FontSize="20" Foreground="#4b63cc" FontWeight="SemiBold"/>
-            <Button Content="Выбрать..." FontSize="15" Height="30" Background="#afdafc"
+            <TextBlock Text="Картинка к условию" FontSize="20" Foreground="#7366BD" FontWeight="SemiBold"/>
+            <Button Content="Выбрать..." FontSize="15" Height="30" Background="#C5A6FF"
                         Foreground="White" Click="ButtonAddConditionImage" Margin="0 5 0 0"/>
             <Image Name="ImageCondition" Margin="0 5 0 0" MaxHeight="150"/>
         </StackPanel>
         <StackPanel Margin="10 5 10 5" >
-            <TextBlock Text="Решение" FontSize="20" Foreground="#4b63cc" FontWeight="SemiBold"/>
+            <TextBlock Text="Решение" FontSize="20" Foreground="#7366BD" FontWeight="SemiBold"/>
             <TextBox Name="BoxAddTaskDecision" TextWrapping="Wrap" FontSize="15" 
                      Margin="0 3 0 0" BorderBrush="#FFD1C4E9"/>
         </StackPanel>
         <StackPanel Margin="10 5 10 5" >
-            <TextBlock Text="Картинка к решению" FontSize="20" Foreground="#4b63cc" FontWeight="SemiBold"/>
-            <Button Content="Выбрать..." FontSize="15" Height="30" Background="#afdafc"
+            <TextBlock Text="Картинка к решению" FontSize="20" Foreground="#7366BD" FontWeight="SemiBold"/>
+            <Button Content="Выбрать..." FontSize="15" Height="30" Background="#C5A6FF"
                         Foreground="White" Click="ButtonAddDecisionImage" Margin="0 5 0 0"/>
             <Image Name="ImageDecision" Margin="0 5 0 0" MaxHeight="150"/>
         </StackPanel>
         <StackPanel Name="PanelAddTaskRightAnswer" Visibility="Collapsed" Margin="10 5 10 5" >
-            <TextBlock Text="Правильный ответ" FontSize="20" Foreground="#4b63cc" FontWeight="SemiBold"/>
+            <TextBlock Text="Правильный ответ" FontSize="20" Foreground="#7366BD" FontWeight="SemiBold"/>
             <TextBox Name="BoxAddTaskRightAnswer" TextWrapping="Wrap" FontSize="15" 
                      BorderBrush="#FFD1C4E9" Margin="0 3 0 0" Height="22"/>
         </StackPanel>
         <StackPanel Margin="10 5 10 5" Visibility="Collapsed" Name="PanelAddTaskCriteria">
-            <TextBlock Text="Индивидуальные критерии" FontSize="20" Foreground="#4b63cc" FontWeight="SemiBold"/>
+            <TextBlock Text="Индивидуальные критерии" FontSize="20" Foreground="#7366BD" FontWeight="SemiBold"/>
             <TextBox Name="BoxAddTaskIndCriteria" TextWrapping="Wrap" FontSize="15" Margin="0 3 0 0" Height="50"/>
         </StackPanel>
         <StackPanel Margin="5 5 5 10" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Content="Сохранить" FontSize="25" Click="ButtonAddTaskSave" Width="150" 
                     Background="#FF9D9BFF" Foreground="Beige" Height="40" Margin="5"/>
             <Button Content="Отмена" FontSize="25" Click="ButtonAddTaskCansel" Width="150"
-                    Background="#acacac" Foreground="Beige" Margin="5"/>
+                    Background="#C0C0C0" Foreground="Beige" Margin="5"/>
         </StackPanel>
     </StackPanel>
 </Window>
