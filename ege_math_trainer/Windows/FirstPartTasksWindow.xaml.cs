@@ -120,8 +120,8 @@ namespace ege_math_trainer.Windows
             }
             else
             {
-                MessageBox.Show("Введите ответ в поле, чтобы проверить его.");
                 BoxTaskAnswer.Background = new SolidColorBrush(Colors.Wheat);
+                MessageBox.Show("Введите ответ в поле, чтобы проверить его.");
             }
         }
     }

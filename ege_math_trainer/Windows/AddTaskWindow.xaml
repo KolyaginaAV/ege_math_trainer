@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ege_math_trainer.Windows"
         mc:Ignorable="d"
-        Title="AddTaskWindow" Width="700" MinHeight="500" Left="600" SizeToContent ="Height" 
+        Title="AddTaskWindow" Width="700" MinHeight="500" Left="845" SizeToContent ="Height" 
         Top="0" Background="#FFF5F7FF">
     <StackPanel>
         <TextBlock Text="Добавление задания" FontSize="30" HorizontalAlignment="Center" Foreground="#FF6C63FF"

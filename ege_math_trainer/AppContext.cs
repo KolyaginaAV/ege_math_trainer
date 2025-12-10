@@ -1,4 +1,6 @@
-﻿using ege_math_trainer.Models;
+﻿using System.IO;
+using System.Diagnostics;
+using ege_math_trainer.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ege_math_trainer
@@ -196,7 +198,7 @@ namespace ege_math_trainer
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=databaseSQLite.db");
+            optionsBuilder.UseSqlite("Data Source=ege_math_database.db");
         }
     }
 }

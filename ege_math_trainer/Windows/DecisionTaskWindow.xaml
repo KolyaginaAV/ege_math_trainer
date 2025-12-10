@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ege_math_trainer.Windows"
         mc:Ignorable="d"
-        Title="DecisionTaskWindow" Width="950" SizeToContent ="Height" Left="550" Top="0" Background="#FFF5F7FF">
+        Title="DecisionTaskWindow" Width="950" SizeToContent ="Height" Left="588" Top="1" Background="#FFF5F7FF">
     <StackPanel>
         <TextBlock Text="Решение" FontSize="30" HorizontalAlignment="Center" FontWeight="Bold" Foreground="#FF6C63FF"/>
         <TextBlock Name="NameTaskDecision" FontSize="30" HorizontalAlignment="Center" Margin="5" FontWeight="Bold" Foreground="#FF6C63FF"/>
