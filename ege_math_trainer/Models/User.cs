@@ -12,5 +12,7 @@
         public string? Email { get; set; }
         public Role Role { get; set; }
         public int RoleId { get; set; }
+        public List<PartOneTask> PartOneTasks { get; set; } = new();
+        public List<PartTwoTask> PartTwoTasks { get; set; } = new();
     }
 }
