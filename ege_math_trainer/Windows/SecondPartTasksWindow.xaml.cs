@@ -14,10 +14,9 @@ namespace ege_math_trainer.Windows
             InitializeComponent();
 
             _context = new AppContext();
+            currentUser = _context.Users.FirstOrDefault(q => q.Id == user.Id);
 
             SecondPartTaskTitle.Text = _context.Tasks.FirstOrDefault(q => q.Id == taskId).ToString();
-
-            currentUser = _context.Users.FirstOrDefault(q => q.Id == user.Id);
 
             currentTask = _context.PartTwoTasks.FirstOrDefault(q => q.TaskId == taskId && !q.Users.Any(u => u.Id == currentUser.Id));
             if (currentTask != null)
@@ -40,7 +39,7 @@ namespace ege_math_trainer.Windows
                 {
                     List<PartTwoTask> completedTasks = new();
 
-                    completedTasks.Add(_context.PartTwoTasks.FirstOrDefault(q => q.TaskId == currentTask.TaskId));
+                    completedTasks.Add(_context.PartTwoTasks.FirstOrDefault(q => q.TaskId == taskId));
 
                     foreach (PartTwoTask task in completedTasks)
                     {

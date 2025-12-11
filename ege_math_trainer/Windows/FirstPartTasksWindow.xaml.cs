@@ -9,7 +9,7 @@ namespace ege_math_trainer.Windows
     {
         private AppContext _context;
         public User currentUser;
-        public PartOneTask currentTask; //текущее задание
+        public PartOneTask currentTask;
         public FirstPartTasksWindow(int taskId, User user)
         {
             InitializeComponent();
@@ -38,19 +38,23 @@ namespace ege_math_trainer.Windows
                     "Сообщение", MessageBoxButton.YesNo);
                 if (result == MessageBoxResult.Yes)
                 {
-                    List<PartOneTask> completedTasks = new();
+                    List<PartOneTask> solvedTasks = _context.PartOneTasks.Where(q => q.TaskId == taskId && q.Users.Any(u => u.Id == currentUser.Id)).ToList();
 
-                    completedTasks.Add(_context.PartOneTasks.FirstOrDefault(q => q.TaskId == currentTask.TaskId));
-
-                    foreach (PartOneTask task in completedTasks)
+                    foreach (PartOneTask task in solvedTasks)
                     {
                         task.Users.Remove(currentUser);
                     }
 
                     _context.SaveChanges();
 
-                    FirstPartTasksWindow newWindow = new FirstPartTasksWindow(currentTask.TaskId, currentUser);
+                    FirstPartTasksWindow newWindow = new FirstPartTasksWindow(taskId, currentUser);
                     newWindow.Show();
+                    this.Close();
+                }
+                else 
+                {
+                    MainWindow mainWindow = new MainWindow(currentUser);
+                    mainWindow.Show();
                     this.Close();
                 }
             }
