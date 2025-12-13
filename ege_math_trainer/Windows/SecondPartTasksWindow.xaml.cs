@@ -37,17 +37,10 @@ namespace ege_math_trainer.Windows
                     "Сообщение", MessageBoxButton.YesNo);
                 if (result == MessageBoxResult.Yes)
                 {
-                    List<PartTwoTask> completedTasks = new();
-
-                    completedTasks.Add(_context.PartTwoTasks.FirstOrDefault(q => q.TaskId == taskId));
+                    List<PartTwoTask> completedTasks = _context.PartTwoTasks.Where(q => q.TaskId == taskId).ToList();
 
                     foreach (PartTwoTask task in completedTasks)
                     {
-                        if (task == null)
-                        {
-                            MessageBox.Show("null!");
-                            return;
-                        }
                         task.Users.Remove(currentUser);
                     }
 
@@ -55,6 +48,12 @@ namespace ege_math_trainer.Windows
 
                     SecondPartTasksWindow newWindow = new SecondPartTasksWindow(taskId, currentUser);
                     newWindow.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MainWindow mainWindow = new MainWindow(currentUser);
+                    mainWindow.Show();
                     this.Close();
                 }
             }

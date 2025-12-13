@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System;
+using System.Diagnostics;
+using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using ege_math_trainer.Models;
@@ -10,12 +12,14 @@ namespace ege_math_trainer.Windows
         private AppContext _context;
         public User currentUser;
         public PartOneTask currentTask;
+        public int currentNumberTask;
         public FirstPartTasksWindow(int taskId, User user)
         {
             InitializeComponent();
 
             _context = new AppContext();
             currentUser = _context.Users.FirstOrDefault(u => u.Id == user.Id);
+            currentNumberTask = taskId;
 
             FirstPartTaskTitle.Text = _context.Tasks.FirstOrDefault(q => q.Id == taskId).ToString();
 
@@ -38,9 +42,9 @@ namespace ege_math_trainer.Windows
                     "Сообщение", MessageBoxButton.YesNo);
                 if (result == MessageBoxResult.Yes)
                 {
-                    List<PartOneTask> solvedTasks = _context.PartOneTasks.Where(q => q.TaskId == taskId && q.Users.Any(u => u.Id == currentUser.Id)).ToList();
+                    List<PartOneTask> completedTasks = _context.PartOneTasks.Where(q => q.TaskId == taskId).ToList();
 
-                    foreach (PartOneTask task in solvedTasks)
+                    foreach (PartOneTask task in completedTasks)
                     {
                         task.Users.Remove(currentUser);
                     }
@@ -51,7 +55,7 @@ namespace ege_math_trainer.Windows
                     newWindow.Show();
                     this.Close();
                 }
-                else 
+                else
                 {
                     MainWindow mainWindow = new MainWindow(currentUser);
                     mainWindow.Show();
@@ -98,7 +102,7 @@ namespace ege_math_trainer.Windows
 
         private void ButtonFirstPartTasksNextTask(object sender, RoutedEventArgs e)
         {
-            FirstPartTasksWindow nextFirstPartTasksWindow = new FirstPartTasksWindow(currentTask.TaskId, currentUser);
+            FirstPartTasksWindow nextFirstPartTasksWindow = new FirstPartTasksWindow(currentNumberTask, currentUser);
             nextFirstPartTasksWindow.Show();
             this.Close();
         }
