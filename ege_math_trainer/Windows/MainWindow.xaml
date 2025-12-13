@@ -26,7 +26,7 @@
         <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
             <Button Content="Добавить задания"  FontSize="20" Name="ButtonNameMainAddTask"
                     Click="ButtonMainAddTask" Background="#C5A6FF" 
-                    Foreground="Beige" Width="200" Height="50" Margin="2 2 2 15"/>
+                    Foreground="Beige" Width="200" Height="50" Margin="2 2 2 15" Visibility="Collapsed"/>
             <Button Content="Выйти из аккаунта" FontSize="20" Click="ButtonCanselMain" Height="50" Width="200" 
                     Background="#C0C0C0" Foreground="Beige"  Margin="10 2 2 15"/>
         </StackPanel>

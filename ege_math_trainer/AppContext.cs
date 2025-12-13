@@ -101,9 +101,6 @@ namespace ege_math_trainer
             PartOneTask partOneTask8 = new PartOneTask() { Id = 15, Condition = "    На рисунке изображён график функции y = f(x), определённой на интервале (−1;10). Определите количество целых точек, в которых производная функции f(x) отрицательна.",
                 ConditionImage = "../ImagesCondition/partOneTask8condition.jpg", Decision = "    В целых точках экстремума 0, 2, 5 производная равна нулю, тогда эти точки точно учитывать не будем.\n    Среди других целых точек на интервале (−1;10) промежуткам убывания функции f(x) принадлежат точки 3, 4. \n    Таким образом, производная функции y = f(x) отрицательна в двух целых точках.",
                 RightAnswer = "2", TaskId = Task8.Id };
-            PartOneTask partOneTask8_2 = new PartOneTask() { Id = 16, Condition = "    Материальная точка движется прямолинейно по закону x(t)=6t²-48t+17 (где x — расстояние от точки отсчета в метрах, t — время в секундах, измеренное с начала движения). Найдите ее скорость (в м/⁠с) в момент времени t = 9с.",
-                Decision = "    Найдем закон изменения скорости:\n        V(t)=x'(t)=12t-48\n    При t=9c имеем:\n        V(9)=12*9-48=60м/с",
-                RightAnswer = "60", TaskId = Task8.Id };
             PartOneTask partOneTask9 = new PartOneTask() { Id = 17, Condition = "    В боковой стенке высокого цилиндрического бака у самого дна закреплён кран. После его открытия вода начинает вытекать из бака, при этом высота столба воды в нём меняется по закону H(t) =at²+ bt+H₀, где H — высота столба воды в метрах, H₀ = 8 м — начальный уровень воды, a = 1/72 м/мин² и b = − 2/3 м/мин — постоянные, t — время в минутах, прошедшее с момента открытия крана. Сколько минут вода будет вытекать из бака?",
                 Decision = "    Задача сводится к решению квадратного уравнения с дробными коэффициентами.\n    Из условия известно, что H — это высота столба воды в момент времени t.\n    Нам необходимо найти время t, при котором вся вода вытечет из бака, то есть высота столба воды H будет равна нулю. Тогда имеем уравнение, решив, которое получаем, что вода будет вытекать из бака в течение 24 минут.",
                 DecisionImagePath = "../ImagesDecision/partOneTask9decision.jpg", RightAnswer = "24", TaskId = Task9.Id };
@@ -152,9 +149,6 @@ namespace ege_math_trainer
             PartTwoTask partTwoTask14 = new PartTwoTask() { Id = 3, Condition = "    В правильной четырёхугольной пирамиде SABCD сторона AB основания равна 2√3, а высота SH пирамиды равна 3. Точки M и N  — середины рёбер CD и AB соответственно, а NT  — высота пирамиды NSCD с вершиной N и основанием SCD.\n    а)  Докажите, что точка T является серединой SM.\n    б)  Найдите расстояние между NT и SC.", 
                 DecisionImagePath = "../ImagesDecision/decision14.png", IndEvaluationCriteria = "    Чтобы решить эту задачу, нужно понимать основы перпендикуляра (перпендикуляр к плоскости, перпендикулярные плоскости), знать признаки подобия треугольников. Особых рекомендаций по формлению нет.", 
                 CriteriaId = criteria14.Id, TaskId = Task14.Id};
-            PartTwoTask partTwoTask14_2 = new PartTwoTask() { Id = 4, Condition = "    В правильной треугольной призме ABCA1B1C1 все рёбра равны 1.\n    а) Докажите, что расстояние между прямыми AA1 и BC1 равно расстоянию между прямой AA1 и плоскостью BCC!.\n    б) Найдите это расстояние.", 
-                DecisionImagePath = "../ImagesDecision/decision14_1.png", IndEvaluationCriteria = "    Чтобы решить эту задачу, нужно знать основы параллельности (параллельность прямой к плоскости, параллельные прямые), перпендикулярность плоскости и прямой, плоскостей. Особых рекомендаций по формлению нет.", 
-                CriteriaId = criteria14.Id, TaskId = Task14.Id};
             PartTwoTask partTwoTask15 = new PartTwoTask() { Id = 5, Condition = "Решите неравенство: 2log₉(4x²+1)≥ log₃(3x²+4x+1).", 
                 DecisionImagePath = "../ImagesDecision/decision15.png", IndEvaluationCriteria = "    В этом примере необходимо знать свойства логарифма. Также в заданиях с log необходимо не забывать, что под степенью не должно быть отрицательное число или 0. Если все правила логарифма будут соблюдены, эксперт должен оценить решение.", 
                 CriteriaId = criteria15.Id, TaskId = Task15.Id};
@@ -193,8 +187,8 @@ namespace ege_math_trainer
             modelBuilder.Entity<Task>().HasData(Task1, Task2, Task3, Task4, Task5, Task6, Task7, Task8, Task9, Task10, Task11, Task12, Task13, Task14, Task15, Task16, Task17, Task18, Task19);
             modelBuilder.Entity<Criteria>().HasData(criteria13, criteria14, criteria15, criteria16, criteria17, criteria18, criteria19);
             modelBuilder.Entity<PartOneTask>().HasData(partOneTask1, partOneTask1_2, partOneTask2, partOneTask2_2, partOneTask3, partOneTask3_2, partOneTask4, partOneTask4_2, partOneTask5, partOneTask5_2, partOneTask6, partOneTask6_2,
-                partOneTask7, partOneTask7_2, partOneTask8, partOneTask8_2, partOneTask9, partOneTask9_2, partOneTask10, partOneTask10_2, partOneTask11, partOneTask11_2, partOneTask12, partOneTask12_2);
-            modelBuilder.Entity<PartTwoTask>().HasData(partTwoTask13, partTwoTask13_2, partTwoTask14, partTwoTask14_2, partTwoTask15, partTwoTask15_2, partTwoTask16, partTwoTask16_2,
+                partOneTask7, partOneTask7_2, partOneTask8, partOneTask9, partOneTask9_2, partOneTask10, partOneTask10_2, partOneTask11, partOneTask11_2, partOneTask12, partOneTask12_2);
+            modelBuilder.Entity<PartTwoTask>().HasData(partTwoTask13, partTwoTask13_2, partTwoTask14, partTwoTask15, partTwoTask15_2, partTwoTask16, partTwoTask16_2,
                 partTwoTask17, partTwoTask17_2, partTwoTask18, partTwoTask18_2, partTwoTask19, partTwoTask19_2);
 
             //SaveChanges() - не надо, потому что этот метод вызывает в момент создания БД

@@ -18,7 +18,9 @@ namespace ege_math_trainer.Windows
                 PartOneTask currentTask = _context.PartOneTasks.FirstOrDefault(q => q.Id == currentTaskId);
 
                 NameTaskDecision.Text = _context.Tasks.FirstOrDefault(q => q.Id == currentNumberTaskId).ToString();
+
                 TextBlockDecisionCondition.Text = currentTask.Condition;
+                TextBlockDecision.Visibility = Visibility.Visible;
                 TextBlockDecision.Text = currentTask.Decision;
 
                 PanelDecisionAnswer.Visibility = Visibility.Visible;
@@ -50,6 +52,7 @@ namespace ege_math_trainer.Windows
                 }
                 if (currentTask.Decision != null)
                 {
+                    TextBlockDecision.Visibility = Visibility.Visible;
                     TextBlockDecision.Text = currentTask.Decision;
                 }
                 if (currentTask.DecisionImagePath != null)

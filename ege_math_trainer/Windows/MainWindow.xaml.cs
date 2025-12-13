@@ -29,7 +29,7 @@ namespace ege_math_trainer
             else
             {
                 TextBlockWelcome.Text = "Выберите задание, над которым хотите позаниматься";
-                TextUserName.Text = user.Name;
+                TextUserName.Text = user.Name + "!";
             }
         }
         private void ButtonCanselMain(object sender, RoutedEventArgs e)

@@ -107,7 +107,8 @@ namespace ege_math_trainer.Windows
         {
             if (!string.IsNullOrEmpty(BoxTaskAnswer.Text))
             {
-                string userAnswer = BoxTaskAnswer.Text.Trim().Replace(',', '.'); //Trim() - удаление пробелов; Replace - заменяет все , на .
+                string userAnswer = BoxTaskAnswer.Text.Replace(',', '.').Replace(" ", "");  //Replace - заменяет все , на .
+                string rightAnswer = currentTask.RightAnswer.Replace(',', '.').Replace(" ", "");
 
                 if (userAnswer == currentTask.RightAnswer)
                 {
