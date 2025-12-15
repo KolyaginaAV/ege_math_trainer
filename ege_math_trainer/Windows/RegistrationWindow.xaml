@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ege_math_trainer.Windows"
         mc:Ignorable="d"
-        Title="Окно регистрации" SizeToContent ="WidthAndHeight" Left="990" Top="20" 
+        Title="Окно регистрации" SizeToContent ="WidthAndHeight" Left="1200" Top="20" 
         Background="#FFF5F7FF">
     <StackPanel Orientation="Vertical">
         <TextBlock Text="Регистрация" FontSize="30" HorizontalAlignment="Center" Margin="5" FontWeight="Bold" 
